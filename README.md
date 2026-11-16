@@ -17,7 +17,7 @@
 
 ```bash
 cd /root
-git clone https://github.com/Emory12/qwen2.1-repro.git
+git clone https://github.com/Elrony12/qwen2.1-repro.git
 cd qwen2.1-repro
 ```
 
@@ -42,27 +42,28 @@ pip install -r requirements.txt
 
 ## 环境验证代码
 
-启动 ComfyUI（镜像内已配置）：
-
-```bash
-cd /root/autodl-tmp/ComfyUI
-python main.py --listen 0.0.0.0 --port 6006
-```
-
-另开终端执行验证脚本，提交一次 Qwen-Image 2.1 文生图任务并等待完成：
+平台 clone 本仓库后，在镜像内执行以下命令即可完成验证（秒级完成，无需 GPU、模型、网络或 ComfyUI 服务）：
 
 ```bash
 cd /root/qwen2.1-repro
-python scripts/qwen21_gen.py
+python verify_env.py
 ```
 
-预期输出：队列显示 5 个角色任务（`hutao/ganyu/firefly/zero2/ai`），随后逐个打印 `DONE`，图片保存在 ComfyUI 的 `output/qwen21_beach_cosplay2/` 目录。
+预期输出：
 
-其他示例：
+```
+Python: 3.10.x
+PyTorch: 2.1.2
+CUDA (torch 编译版本): 11.8
+CUDA 可用: True
+[OK] 镜像环境验证通过：PyTorch 2.1.2 / CUDA 11.8 已就绪
+```
+
+完整生图流程（可选，需先按上文下载模型并启动 ComfyUI）：
 
 ```bash
-python scripts/h3_run.py submit     # 提交 H3 图生视频任务
-python scripts/h3_run.py poll <id>  # 轮询任务状态
+cd /root/autodl-tmp/ComfyUI && python main.py --listen 0.0.0.0 --port 6006
+cd /root/qwen2.1-repro && python scripts/qwen21_gen.py
 ```
 
 ## 目录说明
@@ -72,4 +73,5 @@ scripts/              API 调用脚本（qwen21_* 文生图、h3_* 视频、prob
 workflows/api/        API 格式工作流 JSON（guhuozai / lingbao / t8 系列）
 workflows/ui-comfyui/ ComfyUI UI 格式工作流（云绘基础工作流：Flux/Qwen/LTX2/MiniMax-H3 等）
 docs/MODELS.md        模型下载来源与放置位置
+verify_env.py         零依赖环境验证入口（平台执行此脚本）
 ```
