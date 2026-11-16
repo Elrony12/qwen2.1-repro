@@ -3,7 +3,7 @@
 # 用法：在 Git Bash 中运行  bash push-to-github.sh
 set -uo pipefail
 
-USER="Emory12"
+USER="Elrony12"
 REPO="qwen2.1-repro"
 TOKEN="${GITHUB_TOKEN:-}"
 
