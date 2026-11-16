@@ -1,0 +1,210 @@
+{
+  "1": {
+    "class_type": "VAELoader",
+    "inputs": {
+      "vae_name": "minimax-h3/minimax_h3_video_vae_fp16.safetensors"
+    }
+  },
+  "2": {
+    "class_type": "VAELoader",
+    "inputs": {
+      "vae_name": "minimax-h3/minimax_h3_audio_vae_fp32.safetensors"
+    }
+  },
+  "3": {
+    "class_type": "CLIPLoader",
+    "inputs": {
+      "type": "minimax",
+      "device": "default",
+      "clip_name": "minimax-h3/qwen3vl_32b_minimax_h3_nvfp4_awq.safetensors"
+    }
+  },
+  "4": {
+    "class_type": "UNETLoader",
+    "inputs": {
+      "unet_name": "minimax/minimax_h3_hybrid_fl2va_ref2va_b25-49-int8.safetensors",
+      "weight_dtype": "default"
+    }
+  },
+  "5": {
+    "class_type": "LoraLoaderBypassModelOnly",
+    "inputs": {
+      "model": [
+        "4",
+        0
+      ],
+      "lora_name": "minimax-h3/minimax_h3_turbo_4步加速_DasiwaREF2VAHybridV1_curveproj1025_compat_v001-T8.safetensors",
+      "strength_model": 1.0
+    }
+  },
+  "7": {
+    "class_type": "MiniMaxH3AudioConditioningT8",
+    "inputs": {
+      "clip": [
+        "3",
+        0
+      ],
+      "video_vae": [
+        "1",
+        0
+      ],
+      "audio_vae": [
+        "2",
+        0
+      ],
+      "prompt": "Use <Audio 1> as the exact dialogue and voice reference. Match visible lip motion and speaking turns to this source audio; preserve its words and timing. Do not invent additional speech.\n写实3D动漫港风犯罪漫剧，成熟成年人物，电影级青橙光影，地下拳馆犯罪悬疑剧，横屏，精细PBR材质。所有人均为成年人。\nOnly render the story scenes, never a character reference sheet or grey studio backdrop. Do not add music, narration, captions or subtitles except the explicitly requested inner monologues. Speak only the exact supplied Mandarin dialogue, never improvise or repeat. Natural restrained acting, cinematic wide and medium shots, consistent faces and costumes. Violence is stylized with restrained blood, no graphic wound closeups.\nsubject_definitions:\n<Picture 1> is the character reference for 笑面虎. Preserve this face, body, hair and costume exactly across all shots.\n<Picture 2> is the character reference for 乌鸦. Preserve this face, body, hair and costume exactly across all shots.\n笑面虎: 身份：东星社军师头目；性别：男；体态微胖，面皮白净，常佩戴细金丝圆框眼镜，笑容狡诈薄凉。\n乌鸦: 身份：东星社堂主，地下拳馆操盘者；性别：男；面相狠厉冷鸷，短发利落，身形魁伟挺拔，神态阴沉老练。\n乌鸦办公室·日·内: 装修沉稳的帮派办公室，红木办公大桌，背后整面百叶窗透入条纹状刺目光影。\nsummary:\n乌鸦与笑面虎在办公室借恐龙横死报纸商讨局势。笑面虎提韩宾调人，乌鸦盼洪兴大乱拳赛好赚钱。笑面虎合账本询问起疑的何勇如何处置。\nshots:\n0-3秒：【全景长镜头，侧向跟推】在 乌鸦办公室 ( @scene_wuya_bangongshi_nei ) 中，大办公桌上摊着头条为恐龙被杀、洪兴内讧的 报纸 ( @prop_baozhi )，乌鸦  坐于桌后，笑面虎  坐在对面翻账本。\n3-7秒：【双人中景，平视对切】笑面虎  抬眼看向乌鸦，乌鸦淡定自若。\n【对白-笑面虎口型】笑面虎  嘴唇按台词节奏开合，身体朝向乌鸦 ，视线停在乌鸦鼻梁，笑面虎  说：\"韩宾已经在调人了。陈浩南压不住多久。\"\n7-11秒：【中景，侧平视】乌鸦  靠向椅背冷冷回应。\n【对白-乌鸦口型】乌鸦  嘴唇按台词节奏开合，身体后倾靠椅，视线停在笑面虎  镜片上，乌鸦  说：\"压不住最好。洪兴越乱，我们的拳赛越多人看。\"\n11-15秒：【双人中景，过肩反打】笑面虎  合上账本，推了推鼻梁上的眼镜。\n【对白-笑面虎口型】笑面虎  嘴唇按台词节奏开合，身体前倾靠向桌面，视线停在乌鸦眉心，笑面虎  说：\"何勇那边呢？他好像听到风声了。\"",
+      "width": 832,
+      "height": 480,
+      "length": 362,
+      "task_type": "Ref2VA",
+      "audio_mode": "lock_source",
+      "audio_denoise_strength": 1.0,
+      "add_source_as_reference": true,
+      "prompt_primary_audio_ordinal": 1,
+      "strict_prompt_tags": false,
+      "ref_image_size": "match",
+      "reference_video_policy": "official_2_to_15s",
+      "ref_images.ref_image_0": [
+        "100",
+        0
+      ],
+      "ref_images.ref_image_1": [
+        "101",
+        0
+      ],
+      "drive_audio": [
+        "200",
+        0
+      ],
+      "final_audio": [
+        "200",
+        0
+      ]
+    }
+  },
+  "8": {
+    "class_type": "MiniMaxH3DualClockSamplerT8",
+    "inputs": {
+      "model": [
+        "5",
+        0
+      ],
+      "av_latent": [
+        "7",
+        1
+      ],
+      "steps": 4,
+      "shift_video": 12.0,
+      "shift_audio": 3.0,
+      "sampler_name": "dual_clock_euler",
+      "scheduler": "native_flow"
+    }
+  },
+  "9": {
+    "class_type": "BasicGuider",
+    "inputs": {
+      "model": [
+        "8",
+        0
+      ],
+      "conditioning": [
+        "7",
+        0
+      ]
+    }
+  },
+  "10": {
+    "class_type": "RandomNoise",
+    "inputs": {
+      "noise_seed": 26326113
+    }
+  },
+  "11": {
+    "class_type": "SamplerCustomAdvanced",
+    "inputs": {
+      "noise": [
+        "10",
+        0
+      ],
+      "guider": [
+        "9",
+        0
+      ],
+      "sampler": [
+        "8",
+        1
+      ],
+      "sigmas": [
+        "8",
+        2
+      ],
+      "latent_image": [
+        "7",
+        1
+      ]
+    }
+  },
+  "12": {
+    "class_type": "MiniMaxH3AVDecodeT8",
+    "inputs": {
+      "av_latent": [
+        "11",
+        0
+      ],
+      "video_vae": [
+        "1",
+        0
+      ],
+      "audio_vae": [
+        "2",
+        0
+      ]
+    }
+  },
+  "13": {
+    "class_type": "CreateVideo",
+    "inputs": {
+      "images": [
+        "12",
+        0
+      ],
+      "audio": [
+        "7",
+        2
+      ],
+      "fps": 24,
+      "bit_depth": "auto",
+      "color_space": "sRGB"
+    }
+  },
+  "14": {
+    "class_type": "SaveVideo",
+    "inputs": {
+      "video": [
+        "13",
+        0
+      ],
+      "filename_prefix": "guhuozai/shot_13",
+      "format": "auto",
+      "codec": "auto"
+    }
+  },
+  "100": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": "guhuozai/xiaomianhu.png"
+    }
+  },
+  "101": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": "guhuozai/wuya.png"
+    }
+  },
+  "200": {
+    "class_type": "LoadAudio",
+    "inputs": {
+      "audio": "guhuozai/drive_13.wav"
+    }
+  }
+}

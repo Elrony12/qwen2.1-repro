@@ -1,0 +1,9 @@
+https://modelscope.cn/models/Comfy-Org/MiniMax-H3/resolve/master/vae/minimax_h3_audio_vae_fp32.safetensors
+  dir=/root/autodl-tmp/ComfyUI/models/vae
+  out=minimax_h3_audio_vae_fp32.safetensors
+https://modelscope.cn/models/Comfy-Org/MiniMax-H3/resolve/master/vae/minimax_h3_video_vae_int8_convrot.safetensors
+  dir=/root/autodl-tmp/ComfyUI/models/vae
+  out=minimax_h3_video_vae_int8_convrot.safetensors
+https://modelscope.cn/models/Comfy-Org/MiniMax-H3/resolve/master/text_encoders/qwen3vl_32b_minimax_h3_nvfp4_awq.safetensors
+  dir=/root/autodl-tmp/ComfyUI/models/text_encoders
+  out=qwen3vl_32b_minimax_h3_nvfp4_awq.safetensors

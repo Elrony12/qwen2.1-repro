@@ -1,0 +1,196 @@
+{
+  "1": {
+    "class_type": "VAELoader",
+    "inputs": {
+      "vae_name": "minimax-h3/minimax_h3_video_vae_fp16.safetensors"
+    }
+  },
+  "2": {
+    "class_type": "VAELoader",
+    "inputs": {
+      "vae_name": "minimax-h3/minimax_h3_audio_vae_fp32.safetensors"
+    }
+  },
+  "3": {
+    "class_type": "CLIPLoader",
+    "inputs": {
+      "type": "minimax",
+      "device": "default",
+      "clip_name": "minimax-h3/qwen3vl_32b_minimax_h3_nvfp4_awq.safetensors"
+    }
+  },
+  "4": {
+    "class_type": "UNETLoader",
+    "inputs": {
+      "unet_name": "minimax/minimax_h3_hybrid_fl2va_ref2va_b25-49-int8.safetensors",
+      "weight_dtype": "default"
+    }
+  },
+  "5": {
+    "class_type": "LoraLoaderBypassModelOnly",
+    "inputs": {
+      "model": [
+        "4",
+        0
+      ],
+      "lora_name": "minimax-h3/minimax_h3_turbo_4步加速_DasiwaREF2VAHybridV1_curveproj1025_compat_v001-T8.safetensors",
+      "strength_model": 1.0
+    }
+  },
+  "7": {
+    "class_type": "MiniMaxH3AudioConditioningT8",
+    "inputs": {
+      "clip": [
+        "3",
+        0
+      ],
+      "video_vae": [
+        "1",
+        0
+      ],
+      "audio_vae": [
+        "2",
+        0
+      ],
+      "prompt": "写实3D动漫港风犯罪漫剧，成熟成年人物，电影级青橙光影，地下拳馆犯罪悬疑剧，横屏，精细PBR材质。所有人均为成年人。\nOnly render the story scenes, never a character reference sheet or grey studio backdrop. Do not add music, narration, captions or subtitles except the explicitly requested inner monologues. Speak only the exact supplied Mandarin dialogue, never improvise or repeat. Natural restrained acting, cinematic wide and medium shots, consistent faces and costumes. Violence is stylized with restrained blood, no graphic wound closeups.\nsubject_definitions:\n<Picture 1> is the character reference for 何勇. Preserve this face, body, hair and costume exactly across all shots.\n<Picture 2> is the character reference for 乌鸦. Preserve this face, body, hair and costume exactly across all shots.\n何勇: 身份：走投无路的落魄拳手；性别：男；体格精干修长，筋肉结实，神情紧绷凶戾，眼底带有困兽般的焦虑与戒备。\n乌鸦: 身份：东星社堂主，地下拳馆操盘者；性别：男；面相狠厉冷鸷，短发利落，身形魁伟挺拔，神态阴沉老练。\n拳馆更衣室·日·内: 狭小泛潮的更衣室，墙挂大长方水银镜，陈设整排青灰储物铁柜与斑驳长凳，顶悬孤灯，光影冷涩。\nsummary:\n何勇在更衣室镜前焦躁缠手带。门被推开乌鸦走入，门外留小弟。乌鸦冷笑质问何勇得罪太子，何勇动作停顿回怼关你什么事。\nshots:\n0-3秒：【中远景，平视固定镜头】在 拳馆更衣室 ( @scene_gengyishi_nei ) 中，何勇  站在梳妆方镜前缠绕着白色 布质手带 ( @prop_shoudai )，眼神焦躁不安。\n【独白-静口型】何勇  嘴唇自然闭合，口型保持静止，双手拉拽手带；画外响起何勇  的独立叙事配音：\"急着上台证明自己，手心全是冷汗。\"\n3-7秒：【全景长镜头，低位正向跟拍】房门被单手猛力推开，乌鸦  独身阔步迈入室内，随从门外驻足将门扇扣紧。\n【音效】沉重木门撞入锁孔的清脆声响。\n7-11秒：【中景，双人过肩反打】镜头越过何勇紧绷的右肩，乌鸦  驻足三步外上下打量何勇，嘴角扯出一抹无温冷笑。\n【对白-乌鸦口型】乌鸦  嘴唇按台词节奏开合，身体朝向何勇 ，视线停在何勇的面颊，乌鸦  说：\"听说你得罪了太子的人。\"\n11-15秒：【特写转侧平视微摇】何勇  缠带动作骤停，双手扯紧带端，眼眸转动死死盯住方镜中乌鸦的身影。\n【对白-何勇口型】何勇  嘴唇按台词节奏开合，身体朝向镜面，视线停在镜中乌鸦  的双眼，何勇  说：\"……关你什么事。\"",
+      "width": 832,
+      "height": 480,
+      "length": 362,
+      "task_type": "Ref2VA",
+      "audio_mode": "native",
+      "audio_denoise_strength": 1.0,
+      "add_source_as_reference": false,
+      "prompt_primary_audio_ordinal": 0,
+      "strict_prompt_tags": false,
+      "ref_image_size": "match",
+      "reference_video_policy": "official_2_to_15s",
+      "ref_images.ref_image_0": [
+        "100",
+        0
+      ],
+      "ref_images.ref_image_1": [
+        "101",
+        0
+      ]
+    }
+  },
+  "8": {
+    "class_type": "MiniMaxH3DualClockSamplerT8",
+    "inputs": {
+      "model": [
+        "5",
+        0
+      ],
+      "av_latent": [
+        "7",
+        1
+      ],
+      "steps": 4,
+      "shift_video": 12.0,
+      "shift_audio": 3.0,
+      "sampler_name": "dual_clock_euler",
+      "scheduler": "native_flow"
+    }
+  },
+  "9": {
+    "class_type": "BasicGuider",
+    "inputs": {
+      "model": [
+        "8",
+        0
+      ],
+      "conditioning": [
+        "7",
+        0
+      ]
+    }
+  },
+  "10": {
+    "class_type": "RandomNoise",
+    "inputs": {
+      "noise_seed": 26326102
+    }
+  },
+  "11": {
+    "class_type": "SamplerCustomAdvanced",
+    "inputs": {
+      "noise": [
+        "10",
+        0
+      ],
+      "guider": [
+        "9",
+        0
+      ],
+      "sampler": [
+        "8",
+        1
+      ],
+      "sigmas": [
+        "8",
+        2
+      ],
+      "latent_image": [
+        "7",
+        1
+      ]
+    }
+  },
+  "12": {
+    "class_type": "MiniMaxH3AVDecodeT8",
+    "inputs": {
+      "av_latent": [
+        "11",
+        0
+      ],
+      "video_vae": [
+        "1",
+        0
+      ],
+      "audio_vae": [
+        "2",
+        0
+      ]
+    }
+  },
+  "13": {
+    "class_type": "CreateVideo",
+    "inputs": {
+      "images": [
+        "12",
+        0
+      ],
+      "audio": [
+        "12",
+        1
+      ],
+      "fps": 24,
+      "bit_depth": "auto",
+      "color_space": "sRGB"
+    }
+  },
+  "14": {
+    "class_type": "SaveVideo",
+    "inputs": {
+      "video": [
+        "13",
+        0
+      ],
+      "filename_prefix": "guhuozai/shot_02",
+      "format": "auto",
+      "codec": "auto"
+    }
+  },
+  "100": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": "guhuozai/heyong.png"
+    }
+  },
+  "101": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": "guhuozai/wuya.png"
+    }
+  }
+}

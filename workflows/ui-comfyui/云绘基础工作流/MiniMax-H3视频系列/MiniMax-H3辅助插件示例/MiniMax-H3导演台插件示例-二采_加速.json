@@ -1,0 +1,1756 @@
+{
+  "id": "79e9753c-d7eb-464f-b072-38c26f869748",
+  "revision": 0,
+  "last_node_id": 573,
+  "last_link_id": 1294,
+  "nodes": [
+    {
+      "id": 8,
+      "type": "PreviewAny",
+      "pos": [
+        1010,
+        90
+      ],
+      "size": [
+        640,
+        200
+      ],
+      "flags": {},
+      "order": 11,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "source",
+          "type": "*",
+          "link": 20
+        }
+      ],
+      "outputs": [
+        {
+          "name": "STRING",
+          "type": "STRING",
+          "links": null
+        }
+      ],
+      "title": "Director 运行报告",
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.41.0",
+        "Node name for S&R": "PreviewAny"
+      },
+      "widgets_values": [],
+      "widgets_values_named": {}
+    },
+    {
+      "id": 13,
+      "type": "MarkdownNote",
+      "pos": [
+        -680,
+        940
+      ],
+      "size": [
+        300,
+        520
+      ],
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "title": "Note: Size Settings Reference",
+      "properties": {},
+      "widgets_values": [
+        "| megapixels | Aspect | Output (multiple=32) |\n|---|---|---|\n| 0.2 | 16:9 | 608 x 352 |\n| 0.3 | 16:9 | 736 x 416 |\n| 0.4 | 16:9 | 864 x 480 |\n| 0.5 | 16:9 | 960 x 544 |\n| 0.6 | 16:9 | 1056 x 608 |\n| 0.7 | 16:9 | 1152 x 640 |\n| 0.8 | 16:9 | 1216 x 672 |\n| 0.9 | 16:9 | 1280 x 736 |\n| 0.98 | 16:9 | 1344 x 768 |\n| 1.0 | 16:9 | 1376 x 768 |\n| 1.2 | 16:9 | 1504 x 832 |\n| 1.5 | 16:9 | 1664 x 928 |\n| 1.8 | 16:9 | 1824 x 1024 |\n| 2.0 | 16:9 | 1920 x 1088 |\n"
+      ],
+      "widgets_values_named": {
+        "text": "| megapixels | Aspect | Output (multiple=32) |\n|---|---|---|\n| 0.2 | 16:9 | 608 x 352 |\n| 0.3 | 16:9 | 736 x 416 |\n| 0.4 | 16:9 | 864 x 480 |\n| 0.5 | 16:9 | 960 x 544 |\n| 0.6 | 16:9 | 1056 x 608 |\n| 0.7 | 16:9 | 1152 x 640 |\n| 0.8 | 16:9 | 1216 x 672 |\n| 0.9 | 16:9 | 1280 x 736 |\n| 0.98 | 16:9 | 1344 x 768 |\n| 1.0 | 16:9 | 1376 x 768 |\n| 1.2 | 16:9 | 1504 x 832 |\n| 1.5 | 16:9 | 1664 x 928 |\n| 1.8 | 16:9 | 1824 x 1024 |\n| 2.0 | 16:9 | 1920 x 1088 |\n"
+      },
+      "color": "#222",
+      "bgcolor": "#000"
+    },
+    {
+      "id": 11,
+      "type": "MarkdownNote",
+      "pos": [
+        -680,
+        1520
+      ],
+      "size": [
+        280,
+        120
+      ],
+      "flags": {},
+      "order": 1,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "title": "导演台插件地址：",
+      "properties": {},
+      "widgets_values": [
+        "https://github.com/AIMixer/ComfyUI_MiniMaxH3_Director\n"
+      ],
+      "widgets_values_named": {
+        "text": "https://github.com/AIMixer/ComfyUI_MiniMaxH3_Director\n"
+      },
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 6,
+      "type": "CreateVideo",
+      "pos": [
+        980,
+        370
+      ],
+      "size": [
+        280,
+        150
+      ],
+      "flags": {},
+      "order": 10,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 17
+        },
+        {
+          "name": "audio",
+          "shape": 7,
+          "type": "AUDIO",
+          "link": 18
+        },
+        {
+          "name": "fps",
+          "type": "FLOAT",
+          "widget": {
+            "name": "fps"
+          },
+          "link": 19
+        }
+      ],
+      "outputs": [
+        {
+          "name": "VIDEO",
+          "type": "VIDEO",
+          "links": [
+            9
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.41.0",
+        "Node name for S&R": "CreateVideo"
+      },
+      "widgets_values": [
+        24,
+        8,
+        "sRGB",
+        "auto"
+      ],
+      "widgets_values_named": {
+        "fps": 24,
+        "bit_depth": 8,
+        "color_space": "sRGB",
+        "codec": "auto"
+      }
+    },
+    {
+      "id": 19,
+      "type": "CreateVideo",
+      "pos": [
+        1760,
+        130
+      ],
+      "size": [
+        280,
+        150
+      ],
+      "flags": {},
+      "order": 12,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "images",
+          "type": "IMAGE",
+          "link": 32
+        },
+        {
+          "name": "audio",
+          "shape": 7,
+          "type": "AUDIO",
+          "link": 29
+        },
+        {
+          "name": "fps",
+          "type": "FLOAT",
+          "widget": {
+            "name": "fps"
+          },
+          "link": 30
+        }
+      ],
+      "outputs": [
+        {
+          "name": "VIDEO",
+          "type": "VIDEO",
+          "links": [
+            31
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.41.0",
+        "Node name for S&R": "CreateVideo"
+      },
+      "widgets_values": [
+        24,
+        8,
+        "sRGB",
+        "none"
+      ],
+      "widgets_values_named": {
+        "fps": 24,
+        "bit_depth": 8,
+        "color_space": "sRGB",
+        "codec": "none"
+      }
+    },
+    {
+      "id": 20,
+      "type": "SaveVideo",
+      "pos": [
+        1960,
+        380
+      ],
+      "size": [
+        620,
+        450
+      ],
+      "flags": {},
+      "order": 14,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "video",
+          "type": "VIDEO",
+          "link": 31
+        }
+      ],
+      "outputs": [
+        {
+          "name": "video",
+          "type": "VIDEO",
+          "links": null
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.41.0",
+        "Node name for S&R": "SaveVideo"
+      },
+      "widgets_values": [
+        "video/MiniMaxH3_Director",
+        "auto",
+        "auto",
+        "auto"
+      ],
+      "widgets_values_named": {
+        "filename_prefix": "video/MiniMaxH3_Director",
+        "format": "auto",
+        "format.codec": "auto",
+        "codec": "auto"
+      }
+    },
+    {
+      "id": 7,
+      "type": "SaveVideo",
+      "pos": [
+        1290,
+        370
+      ],
+      "size": [
+        620,
+        450
+      ],
+      "flags": {},
+      "order": 13,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "video",
+          "type": "VIDEO",
+          "link": 9
+        }
+      ],
+      "outputs": [
+        {
+          "name": "video",
+          "type": "VIDEO",
+          "links": null
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.41.0",
+        "Node name for S&R": "SaveVideo"
+      },
+      "widgets_values": [
+        "video/MiniMaxH3_Director",
+        "auto",
+        "auto",
+        "auto"
+      ],
+      "widgets_values_named": {
+        "filename_prefix": "video/MiniMaxH3_Director",
+        "format": "auto",
+        "format.codec": "auto",
+        "codec": "auto"
+      }
+    },
+    {
+      "id": 33,
+      "type": "BasicScheduler",
+      "pos": [
+        -960,
+        330
+      ],
+      "size": [
+        270,
+        110
+      ],
+      "flags": {},
+      "order": 7,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 1293
+        }
+      ],
+      "outputs": [
+        {
+          "name": "SIGMAS",
+          "type": "SIGMAS",
+          "links": [
+            68
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.41.0",
+        "Node name for S&R": "BasicScheduler"
+      },
+      "widgets_values": [
+        "beta",
+        3,
+        0.2
+      ],
+      "widgets_values_named": {
+        "scheduler": "beta",
+        "steps": 3,
+        "denoise": 0.2
+      }
+    },
+    {
+      "id": 12,
+      "type": "MiniMaxH3Director",
+      "pos": [
+        -310,
+        100
+      ],
+      "size": [
+        1000,
+        2020
+      ],
+      "flags": {},
+      "order": 9,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "model",
+          "type": "MODEL",
+          "link": 1288
+        },
+        {
+          "name": "video_vae",
+          "type": "VAE",
+          "link": 1290
+        },
+        {
+          "name": "audio_vae",
+          "type": "VAE",
+          "link": 1291
+        },
+        {
+          "name": "clip",
+          "type": "CLIP",
+          "link": 1289
+        },
+        {
+          "name": "i2v_groups",
+          "shape": 7,
+          "type": "MMX_DIR_GROUP",
+          "link": null
+        },
+        {
+          "name": "r2v_groups",
+          "shape": 7,
+          "type": "MMX_DIR_GROUP",
+          "link": null
+        },
+        {
+          "name": "semantic_bridge",
+          "shape": 7,
+          "type": "MMX_DIR_SEMANTIC_BRIDGE",
+          "link": null
+        },
+        {
+          "name": "selflift",
+          "shape": 7,
+          "type": "MMX_DIR_SELFLIFT",
+          "link": null
+        },
+        {
+          "name": "refine",
+          "shape": 7,
+          "type": "MMX_DIR_REFINE",
+          "link": 70
+        },
+        {
+          "name": "face_refine",
+          "shape": 7,
+          "type": "MMX_DIR_FACE_REFINE",
+          "link": null
+        },
+        {
+          "name": "sigmas",
+          "shape": 7,
+          "type": "SIGMAS",
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "images",
+          "shape": 6,
+          "type": "IMAGE",
+          "links": [
+            17
+          ]
+        },
+        {
+          "name": "audio",
+          "shape": 6,
+          "type": "AUDIO",
+          "links": [
+            18,
+            29
+          ]
+        },
+        {
+          "name": "fps",
+          "type": "FLOAT",
+          "links": [
+            19,
+            30
+          ]
+        },
+        {
+          "name": "frame_count",
+          "type": "INT",
+          "links": null
+        },
+        {
+          "name": "source_images",
+          "shape": 6,
+          "type": "IMAGE",
+          "links": null
+        },
+        {
+          "name": "report",
+          "type": "STRING",
+          "links": [
+            20
+          ]
+        },
+        {
+          "name": "images_pre_refine",
+          "shape": 6,
+          "type": "IMAGE",
+          "links": [
+            32
+          ]
+        },
+        {
+          "name": "images_pre_face_refine",
+          "shape": 6,
+          "type": "IMAGE",
+          "links": null
+        }
+      ],
+      "properties": {
+        "cnr_id": "minimax-h3-director",
+        "ver": "4c6245e518dd8a494f3afc4f3cccd53f22d82d10",
+        "Node name for S&R": "MiniMaxH3Director",
+        "aux_id": "AIMixer/ComfyUI_MiniMaxH3_Director"
+      },
+      "widgets_values": [
+        "r2v — 参考主体生视频(Reference to Video)",
+        "subject_definitions:\n<Subject 1> 是来自  <Picture 1> 的棕发紫眸女性，身份与穿着完全锁定参考图：深海军蓝无袖高开衩丝质礼服、金线刺绣立领、黑色薄丝袜、金色尖头高跟鞋、金色耳饰与手镯。\n<Subject 2> 是来自  <Picture 2>  的可爱立体卡通小猴，浅棕皮毛、米色肚腹、橙色眼罩护目镜、蓝色大眼与细长尾巴，外形完全锁定参考图。\n\n",
+        "采样设置",
+        1,
+        712,
+        "fixed",
+        24,
+        864,
+        480,
+        864,
+        197,
+        "{\"version\":5,\"editMode\":\"segment\",\"totalFrames\":197,\"frameRate\":24,\"video\":{\"fileName\":\"\",\"videoFile\":\"\",\"subfolder\":\"\",\"type\":\"input\",\"frames\":[],\"frameMap\":[],\"sourceFrameCount\":734,\"deletedSourceRanges\":[]},\"videoClips\":[],\"global\":{\"taskType\":\"r2v — 参考主体生视频(Reference to Video)\",\"prompt\":\"subject_definitions:\\n<Subject 1> 是来自  <Picture 1> 的棕发紫眸女性，身份与穿着完全锁定参考图：深海军蓝无袖高开衩丝质礼服、金线刺绣立领、黑色薄丝袜、金色尖头高跟鞋、金色耳饰与手镯。\\n<Subject 2> 是来自  <Picture 2>  的可爱立体卡通小猴，浅棕皮毛、米色肚腹、橙色眼罩护目镜、蓝色大眼与细长尾巴，外形完全锁定参考图。\\n\\n\",\"refs\":[{\"index\":0,\"imageFile\":\"h3_input_2dgirl.jpg\",\"fileName\":\"\",\"type\":\"input\",\"subfolder\":\"\"},{\"index\":1,\"imageFile\":\"h3_input_monkey.jpg\",\"fileName\":\"\",\"type\":\"input\",\"subfolder\":\"\"}],\"referenceVideo\":{\"videoFile\":\"\",\"fileName\":\"\",\"type\":\"input\",\"subfolder\":\"\"},\"continuousReference\":false,\"genImage\":{\"imageFile\":\"\"},\"sourceWidth\":768,\"sourceHeight\":1024,\"refAudios\":[],\"commonEnabled\":true,\"commonCollapsed\":false,\"refVideos\":[]},\"output\":{\"mode\":\"fixed\",\"aspectRatio\":\"16:9 (宽屏)\",\"megapixels\":0.4,\"multiple\":32,\"longEdge\":864,\"width\":864,\"height\":480,\"maxExportFrames\":0,\"exportMode\":\"all\",\"audioMode\":\"source\",\"exportSourceImages\":false,\"exportPreFaceRefine\":false,\"refImageSize\":\"match\",\"continuityEnabled\":true,\"continuityOverlapFrames\":22,\"continuityMode\":\"guide\",\"continuityRedraw\":0.1,\"continuityKeepTail\":true},\"runSelectEnabled\":false,\"runSelection\":[],\"segments\":[{\"id\":\"msmp44em3oasd\",\"start\":0,\"length\":124,\"frameCount\":124,\"durationSec\":5,\"prompt\":\"summary:\\n[reference generation] 目标视频表现 <Subject 1> 独自站在豪华酒店夜景露台，缓慢转头、举杯、投出暧昧眼神，镜头由中远景缓推至中近景，建立等待与引诱的气氛。\\n\\nretention_analysis:\\n<Subject 1> (appears in [Shot 1], [Shot 2], [Shot 3]): fully_preserved - 面部身份、长棕发、紫眸、深蓝礼服与金绣、丝袜高跟鞋及饰品均完整保留。\\n\\ndetailed_description:\\n目标视频采用电影感二次元写实风格，暖琥珀夜景侧光，浅景深，浪漫暧昧气质。\\n[Shot 1] 中远景建立豪华酒店夜景露台：玻璃栏杆外城市灯火呈柔和光斑。画面右侧站立 <Subject 1>，侧身面向栏杆，左手轻扶玻璃，右手持香槟杯，长发被夜风轻轻吹动。固定镜头短暂停留后，以小幅度、慢速 Push In 靠近她的上半身。远处隐约传来杯盏轻碰与城市底噪。\\n[Shot 2] At 00:02.000, 镜头不硬切，继续慢速推近至中景：<Subject 1> 缓缓转头看向镜头方向，紫眸半眯，嘴角漾出克制的暧昧浅笑，举杯至唇边却并未真正饮下，只是用杯沿轻触下唇。发丝掠过肩侧，金绣领口在暖光下微微反光。\\n[Shot 3] At 00:03.500, 镜头以小幅度、慢速轻微 Arc Shot 绕至她四分之三正面中近景：<Subject 1> 目光从镜头旁移向画面外一侧，像在等待某人出现，手指在杯壁上缓缓摩挲。镜头稳定停留至结尾，暧昧悬念未解。\\n\\noverall_soundscape:\\n夜风掠过露台的轻柔气流声贯穿全片，远处城市低沉环境底噪与偶尔极轻的杯盏碰击声叠入；衣料与丝袜摩擦的细微声响随人物动作出现。\\n\\nnon_diegetic_music:\\n低音量慢速爵士钢琴与柔和刷鼓点贯穿，节奏舒缓，动态平稳，无歌词。summary:\\n[reference generation] 目标视频表现 <Subject 1> 独自站在豪华酒店夜景露台，缓慢转头、举杯、投出暧昧眼神，镜头由中远景缓推至中近景，建立等待与引诱的气氛。\\n\\nretention_analysis:\\n<Subject 1> (appears in [Shot 1], [Shot 2], [Shot 3]): fully_preserved - 面部身份、长棕发、紫眸、深蓝礼服与金绣、丝袜高跟鞋及饰品均完整保留。\\n\\n\\noverall_soundscape:\\n夜风掠过露台的轻柔气流声贯穿全片，远处城市低沉环境底噪与偶尔极轻的杯盏碰击声叠入；衣料与丝袜摩擦的细微声响随人物动作出现。\\n\\nnon_diegetic_music:\\n低音量慢速爵士钢琴与柔和刷鼓点贯穿，节奏舒缓，动态平稳，无歌词。\",\"negativePrompt\":\"\",\"taskType\":\"\",\"refs\":[],\"refAudios\":[],\"refVideos\":[],\"genImage\":{\"imageFile\":\"\",\"fileName\":\"\"},\"startImage\":null,\"endImage\":null,\"continuityFromPrev\":false,\"refImageSize\":\"match\",\"loras\":[]},{\"id\":\"msyi2qhz5lupx\",\"start\":124,\"length\":73,\"frameCount\":73,\"durationSec\":3,\"prompt\":\"summary:\\n[reference generation] 目标视频承接上一段露台气氛：先短暂保持 <Subject 1> 的等待姿态，随后 <Subject 2> 俏皮跑入，扯动衣摆并指向画外，引导 <Subject 1> 看向即将出现的方向。\\n\\nretention_analysis:\\n<Subject 1> (appears in [Shot 1], [Shot 2]): fully_preserved - 身份、发型面容、深蓝礼服与配饰完整保留。\\n<Subject 2> (appears in [Shot 1], [Shot 2]): fully_preserved - 橙色眼罩、蓝眼、浅棕皮毛与立体卡通质感完整保留。\\n\\ndetailed_description:\\n目标视频延续电影感二次元写实夜景风格，暖琥珀光与浅景深保持一致。\\n[Shot 1] 中近景先静止约 1 秒，保持 <Subject 1> 在露台栏杆旁侧身回望画外的等待姿态，发丝轻动，香槟杯仍在手中。随后 <Subject 2> 从画面下方小跑入画，橙色眼罩反光，尾巴轻甩，伸手轻轻拽住 <Subject 1> 礼服下摆。镜头以小幅度、慢速轻微 Tilt Down 兼顾小猴与她的视线交流。\\n[Shot 2] At 00:02.000, 镜头切到稍低角度的中景双人构图：<Subject 2> 仰头对 <Subject 1> 张开嘴巴做出兴奋表情，小爪指向画面左侧画外；<Subject 1> 低头看它，神情由惊讶转为含笑的娇嗔，再顺着它的指向抬眼望向画外。镜头以慢速、小幅度轻微 Truck Left 暗示视线方向，结束在两人共同看向画外的瞬间。\\n\\noverall_soundscape:\\n延续夜风与远处城市底噪；加入小猴轻快的爪步声、短促可爱气声，以及衣摆被轻扯时的布料细响。\\n\\nnon_diegetic_music:\\n原有慢爵士之上叠入少量轻盈钟琴音符，节奏仍偏慢，音量克制，无歌词。\",\"negativePrompt\":\"\",\"taskType\":\"\",\"refs\":[],\"refAudios\":[],\"refVideos\":[],\"genImage\":{\"imageFile\":\"\",\"fileName\":\"\"},\"startImage\":null,\"endImage\":null,\"continuityFromPrev\":true,\"refImageSize\":\"match\",\"loras\":[]}],\"timelineMode\":\"prompt_batch\",\"width\":864,\"height\":480,\"refMaxSize\":864,\"gen\":{\"defaultFrameCount\":124},\"keyframes\":[{\"id\":\"msdtx3zi62ktv_s\",\"imageFile\":\"0059.png\",\"width\":768,\"height\":1024,\"start\":0,\"length\":62,\"frameCount\":62,\"durationSec\":5,\"prompt\":\"一个猴子在极速奔跑，跑的过程中裤子掉在地上，但他仍然继续奔跑。过程中伴随自然的跑步声\",\"negativePrompt\":\"bad video\",\"isStartFrame\":true,\"isEndFrame\":false},{\"id\":\"msdtx3zi62ktv_e\",\"imageFile\":\"0060.png\",\"width\":512,\"height\":682,\"start\":62,\"length\":62,\"frameCount\":62,\"durationSec\":5,\"prompt\":\"\",\"negativePrompt\":\"bad video\",\"isStartFrame\":false,\"isEndFrame\":true},{\"id\":\"msdtx87njf33g_s\",\"imageFile\":\"0060.png\",\"width\":512,\"height\":682,\"start\":124,\"length\":62,\"frameCount\":62,\"durationSec\":5,\"prompt\":\"猴子在快速奔跑，双臂自然摆动，跑到一个岩石旁，慢慢的坐下，随着时间的流逝，沙尘慢慢消失，漏出蓝天背景。过程中伴随自然的跑步、坐下时候产生的声音\",\"negativePrompt\":\"bad video\",\"isStartFrame\":true,\"isEndFrame\":false},{\"id\":\"msdtx87njf33g_e\",\"imageFile\":\"0062.png\",\"width\":768,\"height\":1024,\"start\":186,\"length\":62,\"frameCount\":62,\"durationSec\":5,\"prompt\":\"\",\"negativePrompt\":\"bad video\",\"isStartFrame\":false,\"isEndFrame\":true},{\"id\":\"msdtwxyuscavj_s\",\"imageFile\":\"0062.png\",\"width\":768,\"height\":1024,\"start\":248,\"length\":62,\"frameCount\":62,\"durationSec\":5,\"prompt\":\"猴子从岩石上起身，起身后穿上衣服，背上书包，去教室上课，慢慢走到教室里，过程中伴随穿衣、背书包、走路的背景音\",\"negativePrompt\":\"bad video\",\"isStartFrame\":true,\"isEndFrame\":false},{\"id\":\"msdtwxyuscavj_e\",\"imageFile\":\"0086.png\",\"width\":768,\"height\":1024,\"start\":310,\"length\":62,\"frameCount\":62,\"durationSec\":5,\"prompt\":\"\",\"negativePrompt\":\"bad video\",\"isStartFrame\":false,\"isEndFrame\":true},{\"id\":\"msdx1e2eigp2x\",\"imageFile\":\"\",\"width\":0,\"height\":0,\"start\":372,\"length\":124,\"frameCount\":124,\"durationSec\":5,\"prompt\":\"\",\"negativePrompt\":\"bad video\",\"isStartFrame\":true,\"isEndFrame\":false}],\"durationSec\":20,\"shots\":[{\"id\":\"msdtx3zi62ktv\",\"durationSec\":5,\"prompt\":\"一个猴子在极速奔跑，跑的过程中裤子掉在地上，但他仍然继续奔跑。过程中伴随自然的跑步声\",\"negativePrompt\":\"bad video\",\"startImage\":{\"imageFile\":\"0059.png\",\"width\":768,\"height\":1024},\"endImage\":{\"imageFile\":\"0060.png\",\"width\":512,\"height\":682}},{\"id\":\"msdtx87njf33g\",\"durationSec\":5,\"prompt\":\"猴子在快速奔跑，双臂自然摆动，跑到一个岩石旁，慢慢的坐下，随着时间的流逝，沙尘慢慢消失，漏出蓝天背景。过程中伴随自然的跑步、坐下时候产生的声音\",\"negativePrompt\":\"bad video\",\"startImage\":{\"imageFile\":\"0060.png\",\"width\":512,\"height\":682},\"endImage\":{\"imageFile\":\"0062.png\",\"width\":768,\"height\":1024}},{\"id\":\"msdtwxyuscavj\",\"durationSec\":5,\"prompt\":\"猴子从岩石上起身，起身后穿上衣服，背上书包，去教室上课，慢慢走到教室里，过程中伴随穿衣、背书包、走路的背景音\",\"negativePrompt\":\"bad video\",\"startImage\":{\"imageFile\":\"0062.png\",\"width\":768,\"height\":1024},\"endImage\":{\"imageFile\":\"0086.png\",\"width\":768,\"height\":1024}},{\"id\":\"msdx1e2eigp2x\",\"durationSec\":5,\"prompt\":\"\",\"negativePrompt\":\"bad video\",\"startImage\":null,\"endImage\":null}],\"liveTaePreview\":true,\"batchDetailMode\":\"solo\",\"batchWorkspaces\":{\"r2v\":{\"selectedIndex\":1,\"editMode\":\"segment\",\"runSelectEnabled\":false,\"runSelection\":[],\"segments\":[{\"id\":\"msmp44em3oasd\",\"start\":0,\"length\":124,\"frameCount\":124,\"durationSec\":5,\"prompt\":\"summary:\\n[reference generation] 目标视频表现 <Subject 1> 独自站在豪华酒店夜景露台，缓慢转头、举杯、投出暧昧眼神，镜头由中远景缓推至中近景，建立等待与引诱的气氛。\\n\\nretention_analysis:\\n<Subject 1> (appears in [Shot 1], [Shot 2], [Shot 3]): fully_preserved - 面部身份、长棕发、紫眸、深蓝礼服与金绣、丝袜高跟鞋及饰品均完整保留。\\n\\ndetailed_description:\\n目标视频采用电影感二次元写实风格，暖琥珀夜景侧光，浅景深，浪漫暧昧气质。\\n[Shot 1] 中远景建立豪华酒店夜景露台：玻璃栏杆外城市灯火呈柔和光斑。画面右侧站立 <Subject 1>，侧身面向栏杆，左手轻扶玻璃，右手持香槟杯，长发被夜风轻轻吹动。固定镜头短暂停留后，以小幅度、慢速 Push In 靠近她的上半身。远处隐约传来杯盏轻碰与城市底噪。\\n[Shot 2] At 00:02.000, 镜头不硬切，继续慢速推近至中景：<Subject 1> 缓缓转头看向镜头方向，紫眸半眯，嘴角漾出克制的暧昧浅笑，举杯至唇边却并未真正饮下，只是用杯沿轻触下唇。发丝掠过肩侧，金绣领口在暖光下微微反光。\\n[Shot 3] At 00:03.500, 镜头以小幅度、慢速轻微 Arc Shot 绕至她四分之三正面中近景：<Subject 1> 目光从镜头旁移向画面外一侧，像在等待某人出现，手指在杯壁上缓缓摩挲。镜头稳定停留至结尾，暧昧悬念未解。\\n\\noverall_soundscape:\\n夜风掠过露台的轻柔气流声贯穿全片，远处城市低沉环境底噪与偶尔极轻的杯盏碰击声叠入；衣料与丝袜摩擦的细微声响随人物动作出现。\\n\\nnon_diegetic_music:\\n低音量慢速爵士钢琴与柔和刷鼓点贯穿，节奏舒缓，动态平稳，无歌词。summary:\\n[reference generation] 目标视频表现 <Subject 1> 独自站在豪华酒店夜景露台，缓慢转头、举杯、投出暧昧眼神，镜头由中远景缓推至中近景，建立等待与引诱的气氛。\\n\\nretention_analysis:\\n<Subject 1> (appears in [Shot 1], [Shot 2], [Shot 3]): fully_preserved - 面部身份、长棕发、紫眸、深蓝礼服与金绣、丝袜高跟鞋及饰品均完整保留。\\n\\n\\noverall_soundscape:\\n夜风掠过露台的轻柔气流声贯穿全片，远处城市低沉环境底噪与偶尔极轻的杯盏碰击声叠入；衣料与丝袜摩擦的细微声响随人物动作出现。\\n\\nnon_diegetic_music:\\n低音量慢速爵士钢琴与柔和刷鼓点贯穿，节奏舒缓，动态平稳，无歌词。\",\"negativePrompt\":\"\",\"taskType\":\"\",\"refs\":[],\"refAudios\":[],\"refVideos\":[],\"genImage\":{\"imageFile\":\"\",\"fileName\":\"\"},\"continuityFromPrev\":false,\"refImageSize\":\"match\",\"loras\":[],\"referenceVideo\":{\"videoFile\":\"\",\"fileName\":\"\",\"type\":\"input\",\"subfolder\":\"\"},\"_videoFrameCount\":124,\"previewFps\":24},{\"id\":\"msyi2qhz5lupx\",\"start\":124,\"length\":73,\"frameCount\":73,\"durationSec\":3,\"prompt\":\"summary:\\n[reference generation] 目标视频承接上一段露台气氛：先短暂保持 <Subject 1> 的等待姿态，随后 <Subject 2> 俏皮跑入，扯动衣摆并指向画外，引导 <Subject 1> 看向即将出现的方向。\\n\\nretention_analysis:\\n<Subject 1> (appears in [Shot 1], [Shot 2]): fully_preserved - 身份、发型面容、深蓝礼服与配饰完整保留。\\n<Subject 2> (appears in [Shot 1], [Shot 2]): fully_preserved - 橙色眼罩、蓝眼、浅棕皮毛与立体卡通质感完整保留。\\n\\ndetailed_description:\\n目标视频延续电影感二次元写实夜景风格，暖琥珀光与浅景深保持一致。\\n[Shot 1] 中近景先静止约 1 秒，保持 <Subject 1> 在露台栏杆旁侧身回望画外的等待姿态，发丝轻动，香槟杯仍在手中。随后 <Subject 2> 从画面下方小跑入画，橙色眼罩反光，尾巴轻甩，伸手轻轻拽住 <Subject 1> 礼服下摆。镜头以小幅度、慢速轻微 Tilt Down 兼顾小猴与她的视线交流。\\n[Shot 2] At 00:02.000, 镜头切到稍低角度的中景双人构图：<Subject 2> 仰头对 <Subject 1> 张开嘴巴做出兴奋表情，小爪指向画面左侧画外；<Subject 1> 低头看它，神情由惊讶转为含笑的娇嗔，再顺着它的指向抬眼望向画外。镜头以慢速、小幅度轻微 Truck Left 暗示视线方向，结束在两人共同看向画外的瞬间。\\n\\noverall_soundscape:\\n延续夜风与远处城市底噪；加入小猴轻快的爪步声、短促可爱气声，以及衣摆被轻扯时的布料细响。\\n\\nnon_diegetic_music:\\n原有慢爵士之上叠入少量轻盈钟琴音符，节奏仍偏慢，音量克制，无歌词。\",\"negativePrompt\":\"\",\"taskType\":\"\",\"refs\":[],\"refAudios\":[],\"refVideos\":[],\"genImage\":{\"imageFile\":\"\",\"fileName\":\"\"},\"continuityFromPrev\":true,\"refImageSize\":\"match\",\"loras\":[],\"referenceVideo\":{\"videoFile\":\"\",\"fileName\":\"\",\"type\":\"input\",\"subfolder\":\"\"},\"_videoFrameCount\":73,\"previewFps\":24,\"previewStep\":3,\"previewTotalSteps\":3,\"previewLive\":true}],\"globalCommon\":{\"commonEnabled\":true,\"commonCollapsed\":false,\"prompt\":\"subject_definitions:\\n<Subject 1> 是来自  <Picture 1> 的棕发紫眸女性，身份与穿着完全锁定参考图：深海军蓝无袖高开衩丝质礼服、金线刺绣立领、黑色薄丝袜、金色尖头高跟鞋、金色耳饰与手镯。\\n<Subject 2> 是来自  <Picture 2>  的可爱立体卡通小猴，浅棕皮毛、米色肚腹、橙色眼罩护目镜、蓝色大眼与细长尾巴，外形完全锁定参考图。\\n\\n\",\"refs\":[{\"index\":0,\"imageFile\":\"h3_input_2dgirl.jpg\",\"fileName\":\"\",\"type\":\"input\",\"subfolder\":\"\"},{\"index\":1,\"imageFile\":\"h3_input_monkey.jpg\",\"fileName\":\"\",\"type\":\"input\",\"subfolder\":\"\"}],\"refAudios\":[],\"refVideos\":[]}}}}",
+        "高级采样",
+        8,
+        "res_multistep",
+        "simple",
+        12,
+        3,
+        false,
+        false,
+        "性能",
+        true,
+        true,
+        true,
+        "raw",
+        "",
+        ""
+      ],
+      "widgets_values_named": {
+        "task_type": "r2v — 参考主体生视频(Reference to Video)",
+        "global_prompt": "subject_definitions:\n<Subject 1> 是来自  <Picture 1> 的棕发紫眸女性，身份与穿着完全锁定参考图：深海军蓝无袖高开衩丝质礼服、金线刺绣立领、黑色薄丝袜、金色尖头高跟鞋、金色耳饰与手镯。\n<Subject 2> 是来自  <Picture 2>  的可爱立体卡通小猴，浅棕皮毛、米色肚腹、橙色眼罩护目镜、蓝色大眼与细长尾巴，外形完全锁定参考图。\n\n",
+        "bd_grp_sample": "采样设置",
+        "cfg": 1,
+        "seed": 712,
+        "control_after_generate": "fixed",
+        "frame_rate": 24,
+        "width": 864,
+        "height": 480,
+        "ref_max_size": 864,
+        "total_frames": 197,
+        "timeline_data": "{\"version\":5,\"editMode\":\"segment\",\"totalFrames\":197,\"frameRate\":24,\"video\":{\"fileName\":\"\",\"videoFile\":\"\",\"subfolder\":\"\",\"type\":\"input\",\"frames\":[],\"frameMap\":[],\"sourceFrameCount\":734,\"deletedSourceRanges\":[]},\"videoClips\":[],\"global\":{\"taskType\":\"r2v — 参考主体生视频(Reference to Video)\",\"prompt\":\"subject_definitions:\\n<Subject 1> 是来自  <Picture 1> 的棕发紫眸女性，身份与穿着完全锁定参考图：深海军蓝无袖高开衩丝质礼服、金线刺绣立领、黑色薄丝袜、金色尖头高跟鞋、金色耳饰与手镯。\\n<Subject 2> 是来自  <Picture 2>  的可爱立体卡通小猴，浅棕皮毛、米色肚腹、橙色眼罩护目镜、蓝色大眼与细长尾巴，外形完全锁定参考图。\\n\\n\",\"refs\":[{\"index\":0,\"imageFile\":\"h3_input_2dgirl.jpg\",\"fileName\":\"\",\"type\":\"input\",\"subfolder\":\"\"},{\"index\":1,\"imageFile\":\"h3_input_monkey.jpg\",\"fileName\":\"\",\"type\":\"input\",\"subfolder\":\"\"}],\"referenceVideo\":{\"videoFile\":\"\",\"fileName\":\"\",\"type\":\"input\",\"subfolder\":\"\"},\"continuousReference\":false,\"genImage\":{\"imageFile\":\"\"},\"sourceWidth\":768,\"sourceHeight\":1024,\"refAudios\":[],\"commonEnabled\":true,\"commonCollapsed\":false,\"refVideos\":[]},\"output\":{\"mode\":\"fixed\",\"aspectRatio\":\"16:9 (宽屏)\",\"megapixels\":0.4,\"multiple\":32,\"longEdge\":864,\"width\":864,\"height\":480,\"maxExportFrames\":0,\"exportMode\":\"all\",\"audioMode\":\"source\",\"exportSourceImages\":false,\"exportPreFaceRefine\":false,\"refImageSize\":\"match\",\"continuityEnabled\":true,\"continuityOverlapFrames\":22,\"continuityMode\":\"guide\",\"continuityRedraw\":0.1,\"continuityKeepTail\":true},\"runSelectEnabled\":false,\"runSelection\":[],\"segments\":[{\"id\":\"msmp44em3oasd\",\"start\":0,\"length\":124,\"frameCount\":124,\"durationSec\":5,\"prompt\":\"summary:\\n[reference generation] 目标视频表现 <Subject 1> 独自站在豪华酒店夜景露台，缓慢转头、举杯、投出暧昧眼神，镜头由中远景缓推至中近景，建立等待与引诱的气氛。\\n\\nretention_analysis:\\n<Subject 1> (appears in [Shot 1], [Shot 2], [Shot 3]): fully_preserved - 面部身份、长棕发、紫眸、深蓝礼服与金绣、丝袜高跟鞋及饰品均完整保留。\\n\\ndetailed_description:\\n目标视频采用电影感二次元写实风格，暖琥珀夜景侧光，浅景深，浪漫暧昧气质。\\n[Shot 1] 中远景建立豪华酒店夜景露台：玻璃栏杆外城市灯火呈柔和光斑。画面右侧站立 <Subject 1>，侧身面向栏杆，左手轻扶玻璃，右手持香槟杯，长发被夜风轻轻吹动。固定镜头短暂停留后，以小幅度、慢速 Push In 靠近她的上半身。远处隐约传来杯盏轻碰与城市底噪。\\n[Shot 2] At 00:02.000, 镜头不硬切，继续慢速推近至中景：<Subject 1> 缓缓转头看向镜头方向，紫眸半眯，嘴角漾出克制的暧昧浅笑，举杯至唇边却并未真正饮下，只是用杯沿轻触下唇。发丝掠过肩侧，金绣领口在暖光下微微反光。\\n[Shot 3] At 00:03.500, 镜头以小幅度、慢速轻微 Arc Shot 绕至她四分之三正面中近景：<Subject 1> 目光从镜头旁移向画面外一侧，像在等待某人出现，手指在杯壁上缓缓摩挲。镜头稳定停留至结尾，暧昧悬念未解。\\n\\noverall_soundscape:\\n夜风掠过露台的轻柔气流声贯穿全片，远处城市低沉环境底噪与偶尔极轻的杯盏碰击声叠入；衣料与丝袜摩擦的细微声响随人物动作出现。\\n\\nnon_diegetic_music:\\n低音量慢速爵士钢琴与柔和刷鼓点贯穿，节奏舒缓，动态平稳，无歌词。summary:\\n[reference generation] 目标视频表现 <Subject 1> 独自站在豪华酒店夜景露台，缓慢转头、举杯、投出暧昧眼神，镜头由中远景缓推至中近景，建立等待与引诱的气氛。\\n\\nretention_analysis:\\n<Subject 1> (appears in [Shot 1], [Shot 2], [Shot 3]): fully_preserved - 面部身份、长棕发、紫眸、深蓝礼服与金绣、丝袜高跟鞋及饰品均完整保留。\\n\\n\\noverall_soundscape:\\n夜风掠过露台的轻柔气流声贯穿全片，远处城市低沉环境底噪与偶尔极轻的杯盏碰击声叠入；衣料与丝袜摩擦的细微声响随人物动作出现。\\n\\nnon_diegetic_music:\\n低音量慢速爵士钢琴与柔和刷鼓点贯穿，节奏舒缓，动态平稳，无歌词。\",\"negativePrompt\":\"\",\"taskType\":\"\",\"refs\":[],\"refAudios\":[],\"refVideos\":[],\"genImage\":{\"imageFile\":\"\",\"fileName\":\"\"},\"startImage\":null,\"endImage\":null,\"continuityFromPrev\":false,\"refImageSize\":\"match\",\"loras\":[]},{\"id\":\"msyi2qhz5lupx\",\"start\":124,\"length\":73,\"frameCount\":73,\"durationSec\":3,\"prompt\":\"summary:\\n[reference generation] 目标视频承接上一段露台气氛：先短暂保持 <Subject 1> 的等待姿态，随后 <Subject 2> 俏皮跑入，扯动衣摆并指向画外，引导 <Subject 1> 看向即将出现的方向。\\n\\nretention_analysis:\\n<Subject 1> (appears in [Shot 1], [Shot 2]): fully_preserved - 身份、发型面容、深蓝礼服与配饰完整保留。\\n<Subject 2> (appears in [Shot 1], [Shot 2]): fully_preserved - 橙色眼罩、蓝眼、浅棕皮毛与立体卡通质感完整保留。\\n\\ndetailed_description:\\n目标视频延续电影感二次元写实夜景风格，暖琥珀光与浅景深保持一致。\\n[Shot 1] 中近景先静止约 1 秒，保持 <Subject 1> 在露台栏杆旁侧身回望画外的等待姿态，发丝轻动，香槟杯仍在手中。随后 <Subject 2> 从画面下方小跑入画，橙色眼罩反光，尾巴轻甩，伸手轻轻拽住 <Subject 1> 礼服下摆。镜头以小幅度、慢速轻微 Tilt Down 兼顾小猴与她的视线交流。\\n[Shot 2] At 00:02.000, 镜头切到稍低角度的中景双人构图：<Subject 2> 仰头对 <Subject 1> 张开嘴巴做出兴奋表情，小爪指向画面左侧画外；<Subject 1> 低头看它，神情由惊讶转为含笑的娇嗔，再顺着它的指向抬眼望向画外。镜头以慢速、小幅度轻微 Truck Left 暗示视线方向，结束在两人共同看向画外的瞬间。\\n\\noverall_soundscape:\\n延续夜风与远处城市底噪；加入小猴轻快的爪步声、短促可爱气声，以及衣摆被轻扯时的布料细响。\\n\\nnon_diegetic_music:\\n原有慢爵士之上叠入少量轻盈钟琴音符，节奏仍偏慢，音量克制，无歌词。\",\"negativePrompt\":\"\",\"taskType\":\"\",\"refs\":[],\"refAudios\":[],\"refVideos\":[],\"genImage\":{\"imageFile\":\"\",\"fileName\":\"\"},\"startImage\":null,\"endImage\":null,\"continuityFromPrev\":true,\"refImageSize\":\"match\",\"loras\":[]}],\"timelineMode\":\"prompt_batch\",\"width\":864,\"height\":480,\"refMaxSize\":864,\"gen\":{\"defaultFrameCount\":124},\"keyframes\":[{\"id\":\"msdtx3zi62ktv_s\",\"imageFile\":\"0059.png\",\"width\":768,\"height\":1024,\"start\":0,\"length\":62,\"frameCount\":62,\"durationSec\":5,\"prompt\":\"一个猴子在极速奔跑，跑的过程中裤子掉在地上，但他仍然继续奔跑。过程中伴随自然的跑步声\",\"negativePrompt\":\"bad video\",\"isStartFrame\":true,\"isEndFrame\":false},{\"id\":\"msdtx3zi62ktv_e\",\"imageFile\":\"0060.png\",\"width\":512,\"height\":682,\"start\":62,\"length\":62,\"frameCount\":62,\"durationSec\":5,\"prompt\":\"\",\"negativePrompt\":\"bad video\",\"isStartFrame\":false,\"isEndFrame\":true},{\"id\":\"msdtx87njf33g_s\",\"imageFile\":\"0060.png\",\"width\":512,\"height\":682,\"start\":124,\"length\":62,\"frameCount\":62,\"durationSec\":5,\"prompt\":\"猴子在快速奔跑，双臂自然摆动，跑到一个岩石旁，慢慢的坐下，随着时间的流逝，沙尘慢慢消失，漏出蓝天背景。过程中伴随自然的跑步、坐下时候产生的声音\",\"negativePrompt\":\"bad video\",\"isStartFrame\":true,\"isEndFrame\":false},{\"id\":\"msdtx87njf33g_e\",\"imageFile\":\"0062.png\",\"width\":768,\"height\":1024,\"start\":186,\"length\":62,\"frameCount\":62,\"durationSec\":5,\"prompt\":\"\",\"negativePrompt\":\"bad video\",\"isStartFrame\":false,\"isEndFrame\":true},{\"id\":\"msdtwxyuscavj_s\",\"imageFile\":\"0062.png\",\"width\":768,\"height\":1024,\"start\":248,\"length\":62,\"frameCount\":62,\"durationSec\":5,\"prompt\":\"猴子从岩石上起身，起身后穿上衣服，背上书包，去教室上课，慢慢走到教室里，过程中伴随穿衣、背书包、走路的背景音\",\"negativePrompt\":\"bad video\",\"isStartFrame\":true,\"isEndFrame\":false},{\"id\":\"msdtwxyuscavj_e\",\"imageFile\":\"0086.png\",\"width\":768,\"height\":1024,\"start\":310,\"length\":62,\"frameCount\":62,\"durationSec\":5,\"prompt\":\"\",\"negativePrompt\":\"bad video\",\"isStartFrame\":false,\"isEndFrame\":true},{\"id\":\"msdx1e2eigp2x\",\"imageFile\":\"\",\"width\":0,\"height\":0,\"start\":372,\"length\":124,\"frameCount\":124,\"durationSec\":5,\"prompt\":\"\",\"negativePrompt\":\"bad video\",\"isStartFrame\":true,\"isEndFrame\":false}],\"durationSec\":20,\"shots\":[{\"id\":\"msdtx3zi62ktv\",\"durationSec\":5,\"prompt\":\"一个猴子在极速奔跑，跑的过程中裤子掉在地上，但他仍然继续奔跑。过程中伴随自然的跑步声\",\"negativePrompt\":\"bad video\",\"startImage\":{\"imageFile\":\"0059.png\",\"width\":768,\"height\":1024},\"endImage\":{\"imageFile\":\"0060.png\",\"width\":512,\"height\":682}},{\"id\":\"msdtx87njf33g\",\"durationSec\":5,\"prompt\":\"猴子在快速奔跑，双臂自然摆动，跑到一个岩石旁，慢慢的坐下，随着时间的流逝，沙尘慢慢消失，漏出蓝天背景。过程中伴随自然的跑步、坐下时候产生的声音\",\"negativePrompt\":\"bad video\",\"startImage\":{\"imageFile\":\"0060.png\",\"width\":512,\"height\":682},\"endImage\":{\"imageFile\":\"0062.png\",\"width\":768,\"height\":1024}},{\"id\":\"msdtwxyuscavj\",\"durationSec\":5,\"prompt\":\"猴子从岩石上起身，起身后穿上衣服，背上书包，去教室上课，慢慢走到教室里，过程中伴随穿衣、背书包、走路的背景音\",\"negativePrompt\":\"bad video\",\"startImage\":{\"imageFile\":\"0062.png\",\"width\":768,\"height\":1024},\"endImage\":{\"imageFile\":\"0086.png\",\"width\":768,\"height\":1024}},{\"id\":\"msdx1e2eigp2x\",\"durationSec\":5,\"prompt\":\"\",\"negativePrompt\":\"bad video\",\"startImage\":null,\"endImage\":null}],\"liveTaePreview\":true,\"batchDetailMode\":\"solo\",\"batchWorkspaces\":{\"r2v\":{\"selectedIndex\":1,\"editMode\":\"segment\",\"runSelectEnabled\":false,\"runSelection\":[],\"segments\":[{\"id\":\"msmp44em3oasd\",\"start\":0,\"length\":124,\"frameCount\":124,\"durationSec\":5,\"prompt\":\"summary:\\n[reference generation] 目标视频表现 <Subject 1> 独自站在豪华酒店夜景露台，缓慢转头、举杯、投出暧昧眼神，镜头由中远景缓推至中近景，建立等待与引诱的气氛。\\n\\nretention_analysis:\\n<Subject 1> (appears in [Shot 1], [Shot 2], [Shot 3]): fully_preserved - 面部身份、长棕发、紫眸、深蓝礼服与金绣、丝袜高跟鞋及饰品均完整保留。\\n\\ndetailed_description:\\n目标视频采用电影感二次元写实风格，暖琥珀夜景侧光，浅景深，浪漫暧昧气质。\\n[Shot 1] 中远景建立豪华酒店夜景露台：玻璃栏杆外城市灯火呈柔和光斑。画面右侧站立 <Subject 1>，侧身面向栏杆，左手轻扶玻璃，右手持香槟杯，长发被夜风轻轻吹动。固定镜头短暂停留后，以小幅度、慢速 Push In 靠近她的上半身。远处隐约传来杯盏轻碰与城市底噪。\\n[Shot 2] At 00:02.000, 镜头不硬切，继续慢速推近至中景：<Subject 1> 缓缓转头看向镜头方向，紫眸半眯，嘴角漾出克制的暧昧浅笑，举杯至唇边却并未真正饮下，只是用杯沿轻触下唇。发丝掠过肩侧，金绣领口在暖光下微微反光。\\n[Shot 3] At 00:03.500, 镜头以小幅度、慢速轻微 Arc Shot 绕至她四分之三正面中近景：<Subject 1> 目光从镜头旁移向画面外一侧，像在等待某人出现，手指在杯壁上缓缓摩挲。镜头稳定停留至结尾，暧昧悬念未解。\\n\\noverall_soundscape:\\n夜风掠过露台的轻柔气流声贯穿全片，远处城市低沉环境底噪与偶尔极轻的杯盏碰击声叠入；衣料与丝袜摩擦的细微声响随人物动作出现。\\n\\nnon_diegetic_music:\\n低音量慢速爵士钢琴与柔和刷鼓点贯穿，节奏舒缓，动态平稳，无歌词。summary:\\n[reference generation] 目标视频表现 <Subject 1> 独自站在豪华酒店夜景露台，缓慢转头、举杯、投出暧昧眼神，镜头由中远景缓推至中近景，建立等待与引诱的气氛。\\n\\nretention_analysis:\\n<Subject 1> (appears in [Shot 1], [Shot 2], [Shot 3]): fully_preserved - 面部身份、长棕发、紫眸、深蓝礼服与金绣、丝袜高跟鞋及饰品均完整保留。\\n\\n\\noverall_soundscape:\\n夜风掠过露台的轻柔气流声贯穿全片，远处城市低沉环境底噪与偶尔极轻的杯盏碰击声叠入；衣料与丝袜摩擦的细微声响随人物动作出现。\\n\\nnon_diegetic_music:\\n低音量慢速爵士钢琴与柔和刷鼓点贯穿，节奏舒缓，动态平稳，无歌词。\",\"negativePrompt\":\"\",\"taskType\":\"\",\"refs\":[],\"refAudios\":[],\"refVideos\":[],\"genImage\":{\"imageFile\":\"\",\"fileName\":\"\"},\"continuityFromPrev\":false,\"refImageSize\":\"match\",\"loras\":[],\"referenceVideo\":{\"videoFile\":\"\",\"fileName\":\"\",\"type\":\"input\",\"subfolder\":\"\"},\"_videoFrameCount\":124,\"previewFps\":24},{\"id\":\"msyi2qhz5lupx\",\"start\":124,\"length\":73,\"frameCount\":73,\"durationSec\":3,\"prompt\":\"summary:\\n[reference generation] 目标视频承接上一段露台气氛：先短暂保持 <Subject 1> 的等待姿态，随后 <Subject 2> 俏皮跑入，扯动衣摆并指向画外，引导 <Subject 1> 看向即将出现的方向。\\n\\nretention_analysis:\\n<Subject 1> (appears in [Shot 1], [Shot 2]): fully_preserved - 身份、发型面容、深蓝礼服与配饰完整保留。\\n<Subject 2> (appears in [Shot 1], [Shot 2]): fully_preserved - 橙色眼罩、蓝眼、浅棕皮毛与立体卡通质感完整保留。\\n\\ndetailed_description:\\n目标视频延续电影感二次元写实夜景风格，暖琥珀光与浅景深保持一致。\\n[Shot 1] 中近景先静止约 1 秒，保持 <Subject 1> 在露台栏杆旁侧身回望画外的等待姿态，发丝轻动，香槟杯仍在手中。随后 <Subject 2> 从画面下方小跑入画，橙色眼罩反光，尾巴轻甩，伸手轻轻拽住 <Subject 1> 礼服下摆。镜头以小幅度、慢速轻微 Tilt Down 兼顾小猴与她的视线交流。\\n[Shot 2] At 00:02.000, 镜头切到稍低角度的中景双人构图：<Subject 2> 仰头对 <Subject 1> 张开嘴巴做出兴奋表情，小爪指向画面左侧画外；<Subject 1> 低头看它，神情由惊讶转为含笑的娇嗔，再顺着它的指向抬眼望向画外。镜头以慢速、小幅度轻微 Truck Left 暗示视线方向，结束在两人共同看向画外的瞬间。\\n\\noverall_soundscape:\\n延续夜风与远处城市底噪；加入小猴轻快的爪步声、短促可爱气声，以及衣摆被轻扯时的布料细响。\\n\\nnon_diegetic_music:\\n原有慢爵士之上叠入少量轻盈钟琴音符，节奏仍偏慢，音量克制，无歌词。\",\"negativePrompt\":\"\",\"taskType\":\"\",\"refs\":[],\"refAudios\":[],\"refVideos\":[],\"genImage\":{\"imageFile\":\"\",\"fileName\":\"\"},\"continuityFromPrev\":true,\"refImageSize\":\"match\",\"loras\":[],\"referenceVideo\":{\"videoFile\":\"\",\"fileName\":\"\",\"type\":\"input\",\"subfolder\":\"\"},\"_videoFrameCount\":73,\"previewFps\":24,\"previewStep\":3,\"previewTotalSteps\":3,\"previewLive\":true}],\"globalCommon\":{\"commonEnabled\":true,\"commonCollapsed\":false,\"prompt\":\"subject_definitions:\\n<Subject 1> 是来自  <Picture 1> 的棕发紫眸女性，身份与穿着完全锁定参考图：深海军蓝无袖高开衩丝质礼服、金线刺绣立领、黑色薄丝袜、金色尖头高跟鞋、金色耳饰与手镯。\\n<Subject 2> 是来自  <Picture 2>  的可爱立体卡通小猴，浅棕皮毛、米色肚腹、橙色眼罩护目镜、蓝色大眼与细长尾巴，外形完全锁定参考图。\\n\\n\",\"refs\":[{\"index\":0,\"imageFile\":\"h3_input_2dgirl.jpg\",\"fileName\":\"\",\"type\":\"input\",\"subfolder\":\"\"},{\"index\":1,\"imageFile\":\"h3_input_monkey.jpg\",\"fileName\":\"\",\"type\":\"input\",\"subfolder\":\"\"}],\"refAudios\":[],\"refVideos\":[]}}}}",
+        "bd_grp_advanced": "高级采样",
+        "steps": 8,
+        "sampler": "res_multistep",
+        "scheduler": "simple",
+        "shift_video": 12,
+        "shift_audio": 3,
+        "export_source_images": false,
+        "export_pre_face_refine": false,
+        "bd_grp_perf": "性能",
+        "clear_vram_between_segments": true,
+        "clear_vram_before_refine": true,
+        "clear_vram_before_face_refine": true,
+        "cache_frames_codec": "raw",
+        "cache_name": "",
+        "minimax_director_ui": ""
+      }
+    },
+    {
+      "id": 38,
+      "type": "MiniMaxH3DirectorRefine",
+      "pos": [
+        -660,
+        250
+      ],
+      "size": [
+        290,
+        530
+      ],
+      "flags": {},
+      "order": 8,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "refine_model",
+          "shape": 7,
+          "type": "MODEL",
+          "link": 1294
+        },
+        {
+          "name": "sigmas",
+          "shape": 7,
+          "type": "SIGMAS",
+          "link": 68
+        },
+        {
+          "name": "upscale_model",
+          "shape": 7,
+          "type": "UPSCALE_MODEL",
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "name": "refine",
+          "type": "MMX_DIR_REFINE",
+          "links": [
+            70
+          ]
+        },
+        {
+          "name": "width",
+          "type": "INT",
+          "links": null
+        },
+        {
+          "name": "height",
+          "type": "INT",
+          "links": null
+        }
+      ],
+      "properties": {
+        "cnr_id": "minimax-h3-director",
+        "ver": "4c6245e518dd8a494f3afc4f3cccd53f22d82d10",
+        "Node name for S&R": "MiniMaxH3DirectorRefine",
+        "aux_id": "AIMixer/ComfyUI_MiniMaxH3_Director"
+      },
+      "widgets_values": [
+        "upscale",
+        "h3_latent",
+        "minimax_h3_latent_upscaler_3d_fp16.safetensors",
+        "euler",
+        1,
+        "inherit",
+        0,
+        "fixed",
+        "跟随导演台",
+        2,
+        1088,
+        720,
+        true,
+        false,
+        false,
+        false,
+        2,
+        128
+      ],
+      "widgets_values_named": {
+        "mode": "upscale",
+        "upscale_method": "h3_latent",
+        "latent_upscale_model": "minimax_h3_latent_upscaler_3d_fp16.safetensors",
+        "sampler": "euler",
+        "passes": 1,
+        "seed_mode": "inherit",
+        "seed": 0,
+        "control_after_generate": "fixed",
+        "aspect_ratio": "跟随导演台",
+        "megapixels": 2,
+        "width": 1088,
+        "height": 720,
+        "skip_fl2v": true,
+        "confirm_first_pass": false,
+        "enable_latent_chunking": false,
+        "enable_tiling": false,
+        "tile_count": 2,
+        "tile_overlap": 128
+      }
+    },
+    {
+      "id": 39,
+      "type": "Label (rgthree)",
+      "pos": [
+        -1630,
+        960
+      ],
+      "size": [
+        280,
+        40
+      ],
+      "flags": {
+        "allow_interaction": true
+      },
+      "order": 2,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "title": "工作流注意事项",
+      "properties": {
+        "fontSize": 40,
+        "fontFamily": "Arial",
+        "fontColor": "#ffffff",
+        "textAlign": "left",
+        "backgroundColor": "transparent",
+        "padding": 0,
+        "borderRadius": 0,
+        "angle": 0
+      },
+      "color": "#fff0",
+      "bgcolor": "#fff0"
+    },
+    {
+      "id": 40,
+      "type": "MarkdownNote",
+      "pos": [
+        -1630,
+        1050
+      ],
+      "size": [
+        440,
+        590
+      ],
+      "flags": {},
+      "order": 3,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "title": "🌟🌟🌟",
+      "properties": {
+        "widget_ue_connectable": {}
+      },
+      "widgets_values": [
+        "经测试，32G 的 4080 显卡没问题，24G 则有可能会死机\n## 🍔 [ComfyUI社区应用版](https://www.codewithgpu.com/app/market/58) ≤ 6.2 的\n#### 1. 安装插件(如果有提示缺失节点)：[如何安装新插件](https://my.feishu.cn/wiki/PtQKwMcuGiezGnkhZUScHZWmnmd)\n    插件网址：\n    https://github.com/AIMixer/ComfyUI_MiniMaxH3_Director\n### 版本 < v5.0 还需要：\n#### 2. 升级 ComfyUI [如何更新 ComfyUI](https://my.feishu.cn/wiki/PwtFwFLfYiKRP7kEkSacDPh1n7g)\n\n---\n## 🪗 镜像版 [ComfyUI/2024](https://www.autodl.art/i/comfyanonymous/ComfyUI/ComfyUI_2024)  ≤ 18.2 的\n#### 下载工作流模型: [如何下载常用模型](https://kcnxcv04ekgp.feishu.cn/wiki/HV6HwtezMijfLZkNXDcc8gfPnrg)\n    🌐【工作流】MiniMaxH3-多镜头双采样4步lora0909\n\n#### 1. 安装插件(如果有提示缺失节点)：[如何安装新插件](https://my.feishu.cn/wiki/PtQKwMcuGiezGnkhZUScHZWmnmd)\n    插件网址：\n    https://github.com/AIMixer/ComfyUI_MiniMaxH3_Director\n\n### 镜像版 版本 < v17.0 需要：\n#### 2. 升级 ComfyUI [如何更新 ComfyUI](https://my.feishu.cn/wiki/PwtFwFLfYiKRP7kEkSacDPh1n7g)\n\n\n"
+      ],
+      "widgets_values_named": {
+        "text": "经测试，32G 的 4080 显卡没问题，24G 则有可能会死机\n## 🍔 [ComfyUI社区应用版](https://www.codewithgpu.com/app/market/58) ≤ 6.2 的\n#### 1. 安装插件(如果有提示缺失节点)：[如何安装新插件](https://my.feishu.cn/wiki/PtQKwMcuGiezGnkhZUScHZWmnmd)\n    插件网址：\n    https://github.com/AIMixer/ComfyUI_MiniMaxH3_Director\n### 版本 < v5.0 还需要：\n#### 2. 升级 ComfyUI [如何更新 ComfyUI](https://my.feishu.cn/wiki/PwtFwFLfYiKRP7kEkSacDPh1n7g)\n\n---\n## 🪗 镜像版 [ComfyUI/2024](https://www.autodl.art/i/comfyanonymous/ComfyUI/ComfyUI_2024)  ≤ 18.2 的\n#### 下载工作流模型: [如何下载常用模型](https://kcnxcv04ekgp.feishu.cn/wiki/HV6HwtezMijfLZkNXDcc8gfPnrg)\n    🌐【工作流】MiniMaxH3-多镜头双采样4步lora0909\n\n#### 1. 安装插件(如果有提示缺失节点)：[如何安装新插件](https://my.feishu.cn/wiki/PtQKwMcuGiezGnkhZUScHZWmnmd)\n    插件网址：\n    https://github.com/AIMixer/ComfyUI_MiniMaxH3_Director\n\n### 镜像版 版本 < v17.0 需要：\n#### 2. 升级 ComfyUI [如何更新 ComfyUI](https://my.feishu.cn/wiki/PwtFwFLfYiKRP7kEkSacDPh1n7g)\n\n\n"
+      },
+      "color": "#432",
+      "bgcolor": "#653"
+    },
+    {
+      "id": 41,
+      "type": "MarkdownNote",
+      "pos": [
+        -1160,
+        1050
+      ],
+      "size": [
+        440,
+        590
+      ],
+      "flags": {},
+      "order": 4,
+      "mode": 0,
+      "inputs": [],
+      "outputs": [],
+      "title": "🌟🌟🌟",
+      "properties": {
+        "widget_ue_connectable": {}
+      },
+      "widgets_values": [
+        "### 本工作流只是插件自带的二采示例工作流，只是为了测试是否正常运行(勾选了缓存清理，32G显存总算没死机)。\n说实话，这种把一大堆功能封装在一个节点里的节点，我个人很不喜欢，一大堆参数，不知道先执行什么，后执行什么，也不知道过程中为什么突然卡那么久、为何需要那么大的内存。\n\nComfyUI 原生节点，“流程”是明确的，可以看到每一步在做什么，可以根据进行状况，随时中断、随时继续、自主调整。即使是 子流程，也可以进去看看内部在做什么。\n\n而且分段视频，按我的习惯，视频续接，就必须是一段一个随机种可选，而不是全部使用一个，比如第一段很满意，第二段要继续抽卡，怎么办？改变了公用种子，就又得从第一段重新跑，那么之前的所有工作，都浪费了。或者，我跑完第一段，想要拿走第一段成果，那抱歉，不允许，这个插件就是要全部片段跑完才给你。\n\n## [👉 测试结果](https://my.feishu.cn/wiki/Ji9Pw6jamiOZ52kcuAici02in2c#share-C0HzdsuCrouIw4xjF09cugzMnUc)"
+      ],
+      "widgets_values_named": {
+        "text": "### 本工作流只是插件自带的二采示例工作流，只是为了测试是否正常运行(勾选了缓存清理，32G显存总算没死机)。\n说实话，这种把一大堆功能封装在一个节点里的节点，我个人很不喜欢，一大堆参数，不知道先执行什么，后执行什么，也不知道过程中为什么突然卡那么久、为何需要那么大的内存。\n\nComfyUI 原生节点，“流程”是明确的，可以看到每一步在做什么，可以根据进行状况，随时中断、随时继续、自主调整。即使是 子流程，也可以进去看看内部在做什么。\n\n而且分段视频，按我的习惯，视频续接，就必须是一段一个随机种可选，而不是全部使用一个，比如第一段很满意，第二段要继续抽卡，怎么办？改变了公用种子，就又得从第一段重新跑，那么之前的所有工作，都浪费了。或者，我跑完第一段，想要拿走第一段成果，那抱歉，不允许，这个插件就是要全部片段跑完才给你。\n\n## [👉 测试结果](https://my.feishu.cn/wiki/Ji9Pw6jamiOZ52kcuAici02in2c#share-C0HzdsuCrouIw4xjF09cugzMnUc)"
+      },
+      "color": "#233",
+      "bgcolor": "#355"
+    },
+    {
+      "id": 568,
+      "type": "ec7faa47-7a22-4440-8b0b-4f175848f90a",
+      "pos": [
+        -1690,
+        100
+      ],
+      "size": [
+        590,
+        240
+      ],
+      "flags": {},
+      "order": 5,
+      "mode": 0,
+      "inputs": [
+        {
+          "label": "video_vae_name",
+          "name": "vae_name",
+          "type": "COMBO",
+          "widget": {
+            "name": "vae_name"
+          },
+          "link": null
+        },
+        {
+          "label": "audio_vae_name",
+          "name": "vae_name_1",
+          "type": "COMBO",
+          "widget": {
+            "name": "vae_name_1"
+          },
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "label": "unet_model",
+          "name": "model",
+          "type": "MODEL",
+          "links": [
+            1288,
+            1292
+          ]
+        },
+        {
+          "label": "clip_model",
+          "name": "CLIP",
+          "type": "CLIP",
+          "links": [
+            1289
+          ]
+        },
+        {
+          "label": "vae_video",
+          "name": "VAE",
+          "type": "VAE",
+          "links": [
+            1290
+          ]
+        },
+        {
+          "label": "vae_audio",
+          "name": "VAE_1",
+          "type": "VAE",
+          "links": [
+            1291
+          ]
+        }
+      ],
+      "properties": {
+        "cnr_id": "comfy-core",
+        "ver": "0.38.0",
+        "previewExposures": []
+      },
+      "widgets_values": [
+        "minimax_h3_ref2va_pruned_int8_convrot.safetensors",
+        "minimax_h3_fl2v_turbo_4step_v1.0_768p_comfyui_bf16.safetensors",
+        "sol-attn",
+        "qwen3vl_32b_minimax_h3_nvfp4_awq.safetensors",
+        "minimax_h3_video_vae_fp16.safetensors",
+        "minimax_h3_audio_vae_fp32.safetensors"
+      ],
+      "widgets_values_named": {
+        "unet_name": "minimax_h3_ref2va_pruned_int8_convrot.safetensors",
+        "lora_name": "minimax_h3_fl2v_turbo_4step_v1.0_768p_comfyui_bf16.safetensors",
+        "selection": "sol-attn",
+        "clip_name": "qwen3vl_32b_minimax_h3_nvfp4_awq.safetensors",
+        "vae_name": "minimax_h3_video_vae_fp16.safetensors",
+        "vae_name_1": "minimax_h3_audio_vae_fp32.safetensors"
+      }
+    },
+    {
+      "id": 569,
+      "type": "Reroute",
+      "pos": [
+        -1060,
+        250
+      ],
+      "size": [
+        75,
+        26
+      ],
+      "flags": {},
+      "order": 6,
+      "mode": 0,
+      "inputs": [
+        {
+          "name": "",
+          "type": "*",
+          "link": 1292
+        }
+      ],
+      "outputs": [
+        {
+          "name": "",
+          "type": "MODEL",
+          "links": [
+            1293,
+            1294
+          ]
+        }
+      ],
+      "title": "转接点",
+      "properties": {
+        "showOutputText": false,
+        "horizontal": false
+      }
+    }
+  ],
+  "links": [
+    [
+      17,
+      12,
+      0,
+      6,
+      0,
+      "IMAGE"
+    ],
+    [
+      18,
+      12,
+      1,
+      6,
+      1,
+      "AUDIO"
+    ],
+    [
+      19,
+      12,
+      2,
+      6,
+      2,
+      "FLOAT"
+    ],
+    [
+      20,
+      12,
+      5,
+      8,
+      0,
+      "STRING"
+    ],
+    [
+      29,
+      12,
+      1,
+      19,
+      1,
+      "AUDIO"
+    ],
+    [
+      30,
+      12,
+      2,
+      19,
+      2,
+      "FLOAT"
+    ],
+    [
+      32,
+      12,
+      6,
+      19,
+      0,
+      "IMAGE"
+    ],
+    [
+      68,
+      33,
+      0,
+      38,
+      1,
+      "SIGMAS"
+    ],
+    [
+      70,
+      38,
+      0,
+      12,
+      8,
+      "MMX_DIR_REFINE"
+    ],
+    [
+      1288,
+      568,
+      0,
+      12,
+      0,
+      "MODEL"
+    ],
+    [
+      1289,
+      568,
+      1,
+      12,
+      3,
+      "CLIP"
+    ],
+    [
+      1290,
+      568,
+      2,
+      12,
+      1,
+      "VAE"
+    ],
+    [
+      1291,
+      568,
+      3,
+      12,
+      2,
+      "VAE"
+    ],
+    [
+      1292,
+      568,
+      0,
+      569,
+      0,
+      "MODEL"
+    ],
+    [
+      1293,
+      569,
+      0,
+      33,
+      0,
+      "MODEL"
+    ],
+    [
+      1294,
+      569,
+      0,
+      38,
+      0,
+      "MODEL"
+    ],
+    [
+      31,
+      19,
+      0,
+      20,
+      0,
+      "VIDEO"
+    ],
+    [
+      9,
+      6,
+      0,
+      7,
+      0,
+      "VIDEO"
+    ]
+  ],
+  "groups": [
+    {
+      "id": 2,
+      "title": "MiniMax H3 Director",
+      "bounding": [
+        -320,
+        40,
+        1120,
+        960
+      ],
+      "color": "#8A8",
+      "flags": {}
+    },
+    {
+      "id": 3,
+      "title": "输出",
+      "bounding": [
+        960,
+        40,
+        760,
+        760
+      ],
+      "color": "#b58",
+      "flags": {}
+    },
+    {
+      "id": 5,
+      "title": "Group",
+      "bounding": [
+        -1640,
+        910,
+        930,
+        740
+      ],
+      "color": "#3f789e",
+      "flags": {}
+    }
+  ],
+  "definitions": {
+    "subgraphs": [
+      {
+        "id": "ec7faa47-7a22-4440-8b0b-4f175848f90a",
+        "version": 1,
+        "state": {
+          "lastGroupId": 40,
+          "lastNodeId": 573,
+          "lastLinkId": 1294,
+          "lastRerouteId": 46
+        },
+        "revision": 0,
+        "config": {},
+        "name": "New Subgraph",
+        "inputNode": {
+          "id": -10,
+          "bounding": [
+            -1448,
+            3471,
+            141.439453125,
+            168
+          ]
+        },
+        "outputNode": {
+          "id": -20,
+          "bounding": [
+            -420,
+            3431,
+            128,
+            128
+          ]
+        },
+        "inputs": [
+          {
+            "id": "7d04a65f-2575-4b4e-9ff5-0e9ede8946a8",
+            "name": "unet_name",
+            "type": "COMBO",
+            "linkIds": [
+              1208
+            ],
+            "pos": [
+              -1330.560546875,
+              3495
+            ]
+          },
+          {
+            "id": "bf36c74e-d973-4d16-858b-ac10f59666fc",
+            "name": "lora_name",
+            "type": "COMBO",
+            "linkIds": [
+              1210
+            ],
+            "pos": [
+              -1330.560546875,
+              3515
+            ]
+          },
+          {
+            "id": "a06b1a2e-d544-4424-9c68-2dad7d7418fa",
+            "name": "selection",
+            "type": "COMFY_DYNAMICCOMBO_V3",
+            "linkIds": [
+              1217
+            ],
+            "pos": [
+              -1330.560546875,
+              3535
+            ]
+          },
+          {
+            "id": "82a443d1-c44c-4d40-8e61-5223c6c8723a",
+            "name": "clip_name",
+            "type": "COMBO",
+            "linkIds": [
+              1211
+            ],
+            "pos": [
+              -1330.560546875,
+              3555
+            ]
+          },
+          {
+            "id": "163ea286-f15b-4bec-bb13-b5c16350d45b",
+            "name": "vae_name",
+            "type": "COMBO",
+            "linkIds": [
+              1212
+            ],
+            "label": "video_vae_name",
+            "pos": [
+              -1330.560546875,
+              3575
+            ]
+          },
+          {
+            "id": "256250ed-83d3-41f6-b900-0fd894896fb5",
+            "name": "vae_name_1",
+            "type": "COMBO",
+            "linkIds": [
+              1213
+            ],
+            "label": "audio_vae_name",
+            "pos": [
+              -1330.560546875,
+              3595
+            ]
+          }
+        ],
+        "outputs": [
+          {
+            "id": "7ab22c03-c631-4748-a9f2-d0eecc2bcb62",
+            "name": "model",
+            "type": "MODEL",
+            "linkIds": [
+              1214
+            ],
+            "label": "unet_model",
+            "pos": [
+              -396,
+              3455
+            ]
+          },
+          {
+            "id": "d3ef1e44-09ae-4bfb-9607-cb9dd5500819",
+            "name": "CLIP",
+            "type": "CLIP",
+            "linkIds": [
+              1215
+            ],
+            "label": "clip_model",
+            "pos": [
+              -396,
+              3475
+            ]
+          },
+          {
+            "id": "f8cd3303-1441-46cc-b475-04f715fe7ad4",
+            "name": "VAE",
+            "type": "VAE",
+            "linkIds": [
+              1143
+            ],
+            "label": "vae_video",
+            "pos": [
+              -396,
+              3495
+            ]
+          },
+          {
+            "id": "40810c3d-eddb-4560-884c-eedd3e9a7ce5",
+            "name": "VAE_1",
+            "type": "VAE",
+            "linkIds": [
+              1144
+            ],
+            "label": "vae_audio",
+            "pos": [
+              -396,
+              3515
+            ]
+          }
+        ],
+        "widgets": [],
+        "nodes": [
+          {
+            "id": 538,
+            "type": "UNETLoader",
+            "pos": [
+              -1260,
+              3110
+            ],
+            "size": [
+              540,
+              90
+            ],
+            "flags": {},
+            "order": 0,
+            "mode": 0,
+            "inputs": [
+              {
+                "localized_name": "UNet名称",
+                "name": "unet_name",
+                "type": "COMBO",
+                "widget": {
+                  "name": "unet_name"
+                },
+                "link": 1208
+              }
+            ],
+            "outputs": [
+              {
+                "label": "模型",
+                "localized_name": "模型",
+                "name": "MODEL",
+                "type": "MODEL",
+                "links": [
+                  1209
+                ]
+              }
+            ],
+            "properties": {
+              "cnr_id": "comfy-core",
+              "ver": "0.31.0",
+              "Node name for S&R": "UNETLoader",
+              "widget_ue_connectable": {
+                "unet_name": true,
+                "weight_dtype": true
+              }
+            },
+            "widgets_values": [
+              "minimax_h3_ref2va_pruned_int8_convrot.safetensors",
+              "default"
+            ],
+            "widgets_values_named": {
+              "unet_name": "minimax_h3_ref2va_pruned_int8_convrot.safetensors",
+              "weight_dtype": "default"
+            },
+            "color": "#223",
+            "bgcolor": "#335"
+          },
+          {
+            "id": 539,
+            "type": "LoraLoaderModelOnly",
+            "pos": [
+              -1260,
+              3260
+            ],
+            "size": [
+              490,
+              90
+            ],
+            "flags": {},
+            "order": 1,
+            "mode": 0,
+            "inputs": [
+              {
+                "label": "模型",
+                "localized_name": "模型",
+                "name": "model",
+                "type": "MODEL",
+                "link": 1209
+              },
+              {
+                "localized_name": "LoRA名称",
+                "name": "lora_name",
+                "type": "COMBO",
+                "widget": {
+                  "name": "lora_name"
+                },
+                "link": 1210
+              }
+            ],
+            "outputs": [
+              {
+                "label": "模型",
+                "localized_name": "模型",
+                "name": "MODEL",
+                "type": "MODEL",
+                "links": [
+                  1207
+                ]
+              }
+            ],
+            "properties": {
+              "cnr_id": "comfy-core",
+              "ver": "0.31.0",
+              "Node name for S&R": "LoraLoaderModelOnly",
+              "widget_ue_connectable": {
+                "lora_name": true,
+                "strength_model": true
+              }
+            },
+            "widgets_values": [
+              "minimax_h3_fl2v_turbo_4step_v1.0_768p_comfyui_bf16.safetensors",
+              0.75
+            ],
+            "widgets_values_named": {
+              "lora_name": "minimax_h3_fl2v_turbo_4step_v1.0_768p_comfyui_bf16.safetensors",
+              "strength_model": 0.75
+            }
+          },
+          {
+            "id": 540,
+            "type": "easy cleanGpuUsed",
+            "pos": [
+              -1260,
+              3400
+            ],
+            "size": [
+              440,
+              50
+            ],
+            "flags": {
+              "collapsed": false
+            },
+            "order": 2,
+            "mode": 0,
+            "inputs": [
+              {
+                "label": "输入任何",
+                "localized_name": "输入任何",
+                "name": "anything",
+                "type": "*",
+                "link": 1207
+              }
+            ],
+            "outputs": [
+              {
+                "label": "输出",
+                "localized_name": "输出",
+                "name": "output",
+                "type": "*",
+                "links": [
+                  1216
+                ]
+              }
+            ],
+            "properties": {
+              "cnr_id": "comfyui-easy-use",
+              "ver": "595e0738a9e3f8d0d9c4d875461b2d2c9e7559c7",
+              "Node name for S&R": "easy cleanGpuUsed",
+              "widget_ue_connectable": {}
+            },
+            "color": "#232",
+            "bgcolor": "#353"
+          },
+          {
+            "id": 541,
+            "type": "CLIPLoader",
+            "pos": [
+              -1260,
+              3570
+            ],
+            "size": [
+              560,
+              120
+            ],
+            "flags": {},
+            "order": 3,
+            "mode": 0,
+            "inputs": [
+              {
+                "localized_name": "CLIP名称",
+                "name": "clip_name",
+                "type": "COMBO",
+                "widget": {
+                  "name": "clip_name"
+                },
+                "link": 1211
+              }
+            ],
+            "outputs": [
+              {
+                "label": "CLIP",
+                "localized_name": "CLIP",
+                "name": "CLIP",
+                "type": "CLIP",
+                "links": [
+                  1215
+                ]
+              }
+            ],
+            "properties": {
+              "cnr_id": "comfy-core",
+              "ver": "0.31.0",
+              "Node name for S&R": "CLIPLoader",
+              "widget_ue_connectable": {
+                "clip_name": true,
+                "type": true,
+                "device": true
+              }
+            },
+            "widgets_values": [
+              "qwen3vl_32b_minimax_h3_nvfp4_awq.safetensors",
+              "minimax",
+              "default"
+            ],
+            "widgets_values_named": {
+              "clip_name": "qwen3vl_32b_minimax_h3_nvfp4_awq.safetensors",
+              "type": "minimax",
+              "device": "default"
+            },
+            "color": "#432",
+            "bgcolor": "#653"
+          },
+          {
+            "id": 542,
+            "type": "BlockSparseAttention",
+            "pos": [
+              -750,
+              3240
+            ],
+            "size": [
+              270,
+              250
+            ],
+            "flags": {},
+            "order": 4,
+            "mode": 0,
+            "inputs": [
+              {
+                "localized_name": "model",
+                "name": "model",
+                "type": "MODEL",
+                "link": 1216
+              },
+              {
+                "localized_name": "selection",
+                "name": "selection",
+                "type": "COMFY_DYNAMICCOMBO_V3",
+                "widget": {
+                  "name": "selection"
+                },
+                "link": 1217
+              }
+            ],
+            "outputs": [
+              {
+                "localized_name": "模型",
+                "name": "model",
+                "type": "MODEL",
+                "links": [
+                  1214
+                ]
+              }
+            ],
+            "properties": {
+              "cnr_id": "comfy-core",
+              "ver": "0.35.0",
+              "Node name for S&R": "BlockSparseAttention"
+            },
+            "widgets_values": [
+              "sol-attn",
+              1.3,
+              0.2,
+              1,
+              "",
+              4096,
+              256,
+              "exact_kv_and_rows",
+              false
+            ],
+            "widgets_values_named": {
+              "selection": "sol-attn",
+              "selection.tau": 1.3,
+              "start_percent": 0.2,
+              "end_percent": 1,
+              "dense_blocks": "",
+              "min_tokens": 4096,
+              "extra_tokens": 256,
+              "sink_conditioning": "exact_kv_and_rows",
+              "verbose": false
+            }
+          },
+          {
+            "id": 543,
+            "type": "VAELoader",
+            "pos": [
+              -1260,
+              3730
+            ],
+            "size": [
+              560,
+              70
+            ],
+            "flags": {},
+            "order": 5,
+            "mode": 0,
+            "inputs": [
+              {
+                "localized_name": "vae名称",
+                "name": "vae_name",
+                "type": "COMBO",
+                "widget": {
+                  "name": "vae_name"
+                },
+                "link": 1212
+              }
+            ],
+            "outputs": [
+              {
+                "localized_name": "VAE",
+                "name": "VAE",
+                "type": "VAE",
+                "links": [
+                  1143
+                ]
+              }
+            ],
+            "properties": {
+              "cnr_id": "comfy-core",
+              "ver": "0.31.0",
+              "Node name for S&R": "VAELoader",
+              "widget_ue_connectable": {
+                "vae_name": true
+              }
+            },
+            "widgets_values": [
+              "minimax_h3_video_vae_fp16.safetensors"
+            ],
+            "widgets_values_named": {
+              "vae_name": "minimax_h3_video_vae_fp16.safetensors"
+            },
+            "color": "#322",
+            "bgcolor": "#533"
+          },
+          {
+            "id": 544,
+            "type": "VAELoader",
+            "pos": [
+              -1260,
+              3850
+            ],
+            "size": [
+              560,
+              70
+            ],
+            "flags": {},
+            "order": 6,
+            "mode": 0,
+            "inputs": [
+              {
+                "localized_name": "vae名称",
+                "name": "vae_name",
+                "type": "COMBO",
+                "widget": {
+                  "name": "vae_name"
+                },
+                "link": 1213
+              }
+            ],
+            "outputs": [
+              {
+                "localized_name": "VAE",
+                "name": "VAE",
+                "type": "VAE",
+                "links": [
+                  1144
+                ]
+              }
+            ],
+            "properties": {
+              "cnr_id": "comfy-core",
+              "ver": "0.31.0",
+              "Node name for S&R": "VAELoader",
+              "widget_ue_connectable": {
+                "vae_name": true
+              }
+            },
+            "widgets_values": [
+              "minimax_h3_audio_vae_fp32.safetensors"
+            ],
+            "widgets_values_named": {
+              "vae_name": "minimax_h3_audio_vae_fp32.safetensors"
+            },
+            "color": "#322",
+            "bgcolor": "#533"
+          }
+        ],
+        "groups": [],
+        "links": [
+          {
+            "id": 1207,
+            "origin_id": 539,
+            "origin_slot": 0,
+            "target_id": 540,
+            "target_slot": 0,
+            "type": "MODEL"
+          },
+          {
+            "id": 1208,
+            "origin_id": -10,
+            "origin_slot": 0,
+            "target_id": 538,
+            "target_slot": 0,
+            "type": "COMBO"
+          },
+          {
+            "id": 1209,
+            "origin_id": 538,
+            "origin_slot": 0,
+            "target_id": 539,
+            "target_slot": 0,
+            "type": "MODEL"
+          },
+          {
+            "id": 1210,
+            "origin_id": -10,
+            "origin_slot": 1,
+            "target_id": 539,
+            "target_slot": 1,
+            "type": "COMBO"
+          },
+          {
+            "id": 1211,
+            "origin_id": -10,
+            "origin_slot": 3,
+            "target_id": 541,
+            "target_slot": 0,
+            "type": "COMBO"
+          },
+          {
+            "id": 1212,
+            "origin_id": -10,
+            "origin_slot": 4,
+            "target_id": 543,
+            "target_slot": 0,
+            "type": "COMBO"
+          },
+          {
+            "id": 1213,
+            "origin_id": -10,
+            "origin_slot": 5,
+            "target_id": 544,
+            "target_slot": 0,
+            "type": "COMBO"
+          },
+          {
+            "id": 1214,
+            "origin_id": 542,
+            "origin_slot": 0,
+            "target_id": -20,
+            "target_slot": 0,
+            "type": "MODEL"
+          },
+          {
+            "id": 1215,
+            "origin_id": 541,
+            "origin_slot": 0,
+            "target_id": -20,
+            "target_slot": 1,
+            "type": "CLIP"
+          },
+          {
+            "id": 1143,
+            "origin_id": 543,
+            "origin_slot": 0,
+            "target_id": -20,
+            "target_slot": 2,
+            "type": "VAE"
+          },
+          {
+            "id": 1144,
+            "origin_id": 544,
+            "origin_slot": 0,
+            "target_id": -20,
+            "target_slot": 3,
+            "type": "VAE"
+          },
+          {
+            "id": 1216,
+            "origin_id": 540,
+            "origin_slot": 0,
+            "target_id": 542,
+            "target_slot": 0,
+            "type": "MODEL"
+          },
+          {
+            "id": 1217,
+            "origin_id": -10,
+            "origin_slot": 2,
+            "target_id": 542,
+            "target_slot": 1,
+            "type": "COMFY_DYNAMICCOMBO_V3"
+          }
+        ],
+        "extra": {}
+      }
+    ]
+  },
+  "config": {},
+  "extra": {
+    "frontendVersion": "1.55.18",
+    "note": "MiniMax H3 Director · t2v",
+    "ds": {
+      "scale": 0.29927184466019985,
+      "offset": [
+        3225.951384814528,
+        676.684341789641
+      ]
+    },
+    "VHS_latentpreview": false,
+    "VHS_latentpreviewrate": 0,
+    "VHS_MetadataImage": true,
+    "VHS_KeepIntermediate": true
+  },
+  "version": 0.4,
+  "seed_widgets": {
+    "12": 4,
+    "38": 6
+  }
+}

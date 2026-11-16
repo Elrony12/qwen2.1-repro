@@ -1,0 +1,203 @@
+{
+ "1": {
+  "class_type": "VAELoader",
+  "inputs": {
+   "vae_name": "minimax-h3/minimax_h3_video_vae_fp16.safetensors"
+  }
+ },
+ "2": {
+  "class_type": "VAELoader",
+  "inputs": {
+   "vae_name": "minimax-h3/minimax_h3_audio_vae_fp32.safetensors"
+  }
+ },
+ "3": {
+  "class_type": "CLIPLoader",
+  "inputs": {
+   "type": "minimax",
+   "device": "default",
+   "clip_name": "minimax-h3/qwen3vl_32b_minimax_h3_nvfp4_awq.safetensors"
+  }
+ },
+ "4": {
+  "class_type": "UNETLoader",
+  "inputs": {
+   "unet_name": "minimax_h3_ref2va_int8_convrot.safetensors",
+   "weight_dtype": "default"
+  }
+ },
+ "7": {
+  "class_type": "MiniMaxH3AudioConditioningT8",
+  "inputs": {
+   "clip": [
+    "3",
+    0
+   ],
+   "video_vae": [
+    "1",
+    0
+   ],
+   "audio_vae": [
+    "2",
+    0
+   ],
+   "prompt": "subject_definitions:\n<Subject 1> is the male crime figure Wu Ya from <Picture 1>, preserving his exact facial bone structure, facial identity, sleek dark hairstyle, hardened expression, realistic skin texture with natural pores, and distinctive dark tailored attire.\n<Subject 2> is the henchman subordinate from <Picture 2>, preserving his facial features, build, short crew hairstyle, subservient demeanor, and dark clothing.\n<Subject 3> is the interior environment of the Black Tiger Boxing Gym from <Picture 3>, preserving the raw industrial architecture, elevated concrete mezzanine with metal railings, harsh overhead spotlights, underground iron cage boxing ring, and smoky, crowded atmosphere.\n<Subject 4> is the lit cigarette from <Picture 4>, preserving its rolled white paper body, burning orange ember tip, and thin curling ribbon of smoke.\n\nsummary:\n[reference generation] The 16:9 target video is a gritty, hyper-realistic neo-noir drama set within <Subject 3>, where an underground cage match unfolds while crime boss <Subject 1> watches from an upper balcony holding <Subject 4>. <Subject 2> steps forward to deliver a spoken status report, and <Subject 1> responds with cold authority while taking a drag from his cigarette, captured with steady cinematic camerawork, strict facial stability, photorealistic skin textures, and abrupt hard cuts without any background music.\n\nretention_analysis:\n<Subject 1> (appears in [Shot 2], [Shot 3], [Shot 4]): fully_preserved - the facial features, hairstyle, hardened expression, skin pore detail, and clothing from <Picture 1> are retained with zero face drift or distortion across all appearances while he handles <Subject 4> and speaks with lip synchronization.\n<Subject 2> (appears in [Shot 3]): fully_preserved - the facial identity, short haircut, build, and attire from <Picture 2> are preserved while he performs synchronized dialogue.\n<Subject 3> (appears in [Shot 1], [Shot 2], [Shot 3], [Shot 4]): fully_preserved - the spatial layout, metal cage ring, iron railings, harsh atmospheric lighting, and underground fight club aesthetics from <Picture 3> are consistently maintained.\n<Subject 4> (appears in [Shot 2], [Shot 4]): fully_preserved - the cigarette's physical appearance, burning ember, and realistic smoke emission are retained during holding and inhalation.\n\ndetailed_description:\nThe video exhibits an authentic photorealistic cinematic aesthetic in a 16:9 frame, featuring natural skin textures with visible pores and fine micro-details, realistic physical materials, hard industrial lighting with deep natural shadows, and organic optical depth of field. There is no artificial beautification, plastic smoothing, anime stylization, facial morphing, or face swapping, maintaining continuous fluid motion from the first half-second onward with zero static freezing and executing purely through instantaneous hard cuts without dissolves, fades, or wipes.\n[Shot 1] The sequence begins immediately with dynamic motion in a high-angle wide establishing shot looking down from above inside <Subject 3>. The camera tilts slowly downward across the cavernous room. In the center midground, two sweat-sheened fighters grapple aggressively inside an octagonal iron cage, trading heavy body blows. Around the perimeter of the wire mesh, an agitated crowd of rowdy gamblers shouts, waves betting slips, and pumps their fists through haze and rising cigarette smoke. Overhead industrial lamps cast harsh pools of light on the canvas floor.\n[Shot 2] At 00:03.000, an instantaneous hard cut shifts to a medium-long shot filmed from a low angle, executing a slow lateral pan along the second-floor metal railing of <Subject 3>. <Subject 1> stands leaning sideways against the iron balustrade, holding lit cigarette <Subject 4> between his fingers as a wisp of smoke curls upward. His facial features from <Picture 1> remain completely stable and undistorted, exhibiting sharp cheekbones and realistic skin texture under ambient rim lighting. His cold, unblinking eyes remain locked onto the fighting pit below. In the soft-focus background, two imposing bodyguards stand in rigid silence.\n[Shot 3] At 00:07.000, an instantaneous hard cut transitions to a medium over-the-shoulder shot positioned slightly behind <Subject 1>'s right side. <Subject 2> steps forward into the midground from the shadows, coming to a halt at a respectful distance behind <Subject 1>. Lowering his head slightly with his gaze directed deferentially toward <Subject 1>'s shoulder, <Subject 2> (S1) delivers his report with precise lip-sync articulation, his jaw opening naturally to shape each syllable: <d>[Chinese] 鸦哥，何勇到了。</d>. Throughout the delivery, <Subject 2>'s facial identity from <Picture 2> remains stable and unblemished, while <Subject 1>'s still silhouette anchors the foreground.\n[Shot 4] At 00:11.000, an instantaneous hard cut moves to a side-profile medium shot at eye level, accompanied by a slow, controlled lateral tracking move. <Subject 1> keeps his head fixed toward the cage below without turning around. He calmly raises his right hand, brings <Subject 4> to his lips, inhales deeply as the tip of <Subject 4> glows orange, and slowly lowers his hand while exhaling a dense plume of white smoke from his mouth and nostrils. As the smoke drifts across the frame, <Subject 1> (S2) speaks with exact mouth movement and natural lip articulation, keeping his cold gaze fixed on the bloodstained ring canvas: <d>[Chinese] 让他打一场给我看。</d>. The camera steadily decelerates to a hold on his calm, menacing facial profile until 00:15.080 without any on-screen text, subtitles, or facial warping.\n\noverall_soundscape:\nThe auditory environment consists of raw underground fight club Foley: violent thuds of bare fists striking flesh, chaotic roaring and swearing from surrounding gamblers, the metallic rattle of the iron cage mesh, heavy breathing, subtle cloth rustle as <Subject 2> steps forward, a soft sizzle from the burning cigarette ember, and a quiet breathy exhalation of smoke.\n\nnon_diegetic_music:\nN/A",
+   "width": 1344,
+   "height": 768,
+   "length": 362,
+   "task_type": "Ref2VA",
+   "audio_mode": "native",
+   "audio_denoise_strength": 1.0,
+   "add_source_as_reference": false,
+   "prompt_primary_audio_ordinal": 0,
+   "strict_prompt_tags": false,
+   "ref_image_size": "match",
+   "reference_video_policy": "official_2_to_15s",
+   "ref_images.ref_image_0": [
+    "100",
+    0
+   ],
+   "ref_images.ref_image_1": [
+    "101",
+    0
+   ],
+   "ref_images.ref_image_2": [
+    "102",
+    0
+   ],
+   "ref_images.ref_image_3": [
+    "103",
+    0
+   ]
+  }
+ },
+ "8": {
+  "class_type": "MiniMaxH3PDD8StepSetupT8Advanced",
+  "inputs": {
+   "model": [
+    "4",
+    0
+   ],
+   "av_latent": [
+    "7",
+    1
+   ],
+   "pdd_lora_name": "MiniMax-H3-Ref2VA-Acc-8Step_comfyui_pdd.safetensors",
+   "base_variant": "Ref2VA",
+   "strength": 1.0
+  }
+ },
+ "9": {
+  "class_type": "BasicGuider",
+  "inputs": {
+   "model": [
+    "8",
+    0
+   ],
+   "conditioning": [
+    "7",
+    0
+   ]
+  }
+ },
+ "10": {
+  "class_type": "RandomNoise",
+  "inputs": {
+   "noise_seed": 683072603085674
+  }
+ },
+ "11": {
+  "class_type": "SamplerCustomAdvanced",
+  "inputs": {
+   "noise": [
+    "10",
+    0
+   ],
+   "guider": [
+    "9",
+    0
+   ],
+   "sampler": [
+    "8",
+    1
+   ],
+   "sigmas": [
+    "8",
+    2
+   ],
+   "latent_image": [
+    "7",
+    1
+   ]
+  }
+ },
+ "12": {
+  "class_type": "MiniMaxH3AVDecodeT8",
+  "inputs": {
+   "av_latent": [
+    "11",
+    0
+   ],
+   "video_vae": [
+    "1",
+    0
+   ],
+   "audio_vae": [
+    "2",
+    0
+   ]
+  }
+ },
+ "13": {
+  "class_type": "CreateVideo",
+  "inputs": {
+   "images": [
+    "12",
+    0
+   ],
+   "audio": [
+    "12",
+    1
+   ],
+   "fps": 24.0,
+   "bit_depth": "auto",
+   "color_space": "sRGB"
+  }
+ },
+ "14": {
+  "class_type": "SaveVideo",
+  "inputs": {
+   "video": [
+    "13",
+    0
+   ],
+   "filename_prefix": "guhuozai_repro/pdd8",
+   "format": "auto",
+   "codec": "auto"
+  }
+ },
+ "100": {
+  "class_type": "LoadImage",
+  "inputs": {
+   "image": "guhuozai_repro/ref_image_0.png"
+  }
+ },
+ "101": {
+  "class_type": "LoadImage",
+  "inputs": {
+   "image": "guhuozai_repro/ref_image_1.png"
+  }
+ },
+ "102": {
+  "class_type": "LoadImage",
+  "inputs": {
+   "image": "guhuozai_repro/ref_image_2.png"
+  }
+ },
+ "103": {
+  "class_type": "LoadImage",
+  "inputs": {
+   "image": "guhuozai_repro/ref_image_3.png"
+  }
+ }
+}

@@ -1,0 +1,5 @@
+# 镜像内已预装，此文件仅作环境说明与补齐参考
+torch==2.1.2
+numpy
+opencv-python
+requests

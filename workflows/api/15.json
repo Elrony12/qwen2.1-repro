@@ -1,0 +1,200 @@
+{
+  "1": {
+    "class_type": "VAELoader",
+    "inputs": {
+      "vae_name": "minimax-h3/minimax_h3_video_vae_fp16.safetensors"
+    }
+  },
+  "2": {
+    "class_type": "VAELoader",
+    "inputs": {
+      "vae_name": "minimax-h3/minimax_h3_audio_vae_fp32.safetensors"
+    }
+  },
+  "3": {
+    "class_type": "CLIPLoader",
+    "inputs": {
+      "type": "minimax",
+      "device": "default",
+      "clip_name": "minimax-h3/qwen3vl_32b_minimax_h3_nvfp4_awq.safetensors"
+    }
+  },
+  "4": {
+    "class_type": "UNETLoader",
+    "inputs": {
+      "unet_name": "minimax/minimax_h3_hybrid_fl2va_ref2va_b25-49-int8.safetensors",
+      "weight_dtype": "default"
+    }
+  },
+  "5": {
+    "class_type": "LoraLoaderBypassModelOnly",
+    "inputs": {
+      "model": [
+        "4",
+        0
+      ],
+      "lora_name": "minimax-h3/minimax_h3_turbo_4步加速_DasiwaREF2VAHybridV1_curveproj1025_compat_v001-T8.safetensors",
+      "strength_model": 1.0
+    }
+  },
+  "7": {
+    "class_type": "MiniMaxH3AudioConditioningT8",
+    "inputs": {
+      "clip": [
+        "3",
+        0
+      ],
+      "video_vae": [
+        "1",
+        0
+      ],
+      "audio_vae": [
+        "2",
+        0
+      ],
+      "prompt": "Use <Audio 1> as the exact dialogue and voice reference. Match visible lip motion and speaking turns to this source audio; preserve its words and timing. Do not invent additional speech.\n写实3D动漫港风犯罪漫剧，成熟成年人物，电影级青橙光影，地下拳馆犯罪悬疑剧，横屏，精细PBR材质。所有人均为成年人。\nOnly render the story scenes, never a character reference sheet or grey studio backdrop. Do not add music, narration, captions or subtitles except the explicitly requested inner monologues. Speak only the exact supplied Mandarin dialogue, never improvise or repeat. Natural restrained acting, cinematic wide and medium shots, consistent faces and costumes. Violence is stylized with restrained blood, no graphic wound closeups.\nsubject_definitions:\n<Picture 1> is the character reference for 乌鸦. Preserve this face, body, hair and costume exactly across all shots.\n乌鸦: 身份：东星社堂主，地下拳馆操盘者；性别：男；面相狠厉冷鸷，短发利落，身形魁伟挺拔，神态阴沉老练。\n黑虎拳馆擂台·夜·内: 铁笼擂台在夜间射灯下映出斑驳血渍，外围挤满狂呼呐喊的赌徒黑影，二楼回廊沉在昏暗光影中。\nsummary:\n乌鸦独自站在擂台顶灯正下方，慢慢环视四周如同审视棋盘，道出江湖人人皆是棋子的哲理，镜头升至高空黑场收束。\nshots:\n0-3秒：【大远景，穹顶垂直俯拍慢旋转】在 黑虎拳馆擂台·夜 ( @scene_heihu_quanguan_leitai_ye ) 中，头顶一束惨白射灯垂直笼罩空旷的擂台中央，乌鸦  独身傲立正中。\n3-7秒：【中远景，环绕慢摇】镜头以乌鸦为圆心缓慢环摇，乌鸦  缓缓抬起视线环视空无一人的四围铁丝网看台。\n【对白-乌鸦口型】乌鸦  嘴唇按台词节奏开合，身体挺拔伫立台心，视线巡视空旷四壁，乌鸦  说：\"这个江湖，谁不是棋子。\"\n7-11秒：【双人中景转近景，仰角慢推】镜头贴近仰拍乌鸦阴冷从容的下颌与眼眸。\n【对白-乌鸦口型】乌鸦  嘴唇按台词节奏开合，身体傲立，视线停在头顶刺目灯光处，乌鸦  说：\"区别只是，有人知道自己在下棋，\"\n11-15秒：【大远景，极速后拉升镜】镜头从擂台中央向顶棚黑暗深处极速飞升拉远，灯柱中的乌鸦  化为棋盘孤点，直至融入黑暗。\n【对白-乌鸦口型】乌鸦  嘴唇按台词节奏开合，身处聚光灯柱，视线低垂望向空地，乌鸦  说：\"有人一辈子以为自己是下棋的那个。\"",
+      "width": 832,
+      "height": 480,
+      "length": 362,
+      "task_type": "Ref2VA",
+      "audio_mode": "lock_source",
+      "audio_denoise_strength": 1.0,
+      "add_source_as_reference": true,
+      "prompt_primary_audio_ordinal": 1,
+      "strict_prompt_tags": false,
+      "ref_image_size": "match",
+      "reference_video_policy": "official_2_to_15s",
+      "ref_images.ref_image_0": [
+        "100",
+        0
+      ],
+      "drive_audio": [
+        "200",
+        0
+      ],
+      "final_audio": [
+        "200",
+        0
+      ]
+    }
+  },
+  "8": {
+    "class_type": "MiniMaxH3DualClockSamplerT8",
+    "inputs": {
+      "model": [
+        "5",
+        0
+      ],
+      "av_latent": [
+        "7",
+        1
+      ],
+      "steps": 4,
+      "shift_video": 12.0,
+      "shift_audio": 3.0,
+      "sampler_name": "dual_clock_euler",
+      "scheduler": "native_flow"
+    }
+  },
+  "9": {
+    "class_type": "BasicGuider",
+    "inputs": {
+      "model": [
+        "8",
+        0
+      ],
+      "conditioning": [
+        "7",
+        0
+      ]
+    }
+  },
+  "10": {
+    "class_type": "RandomNoise",
+    "inputs": {
+      "noise_seed": 26326115
+    }
+  },
+  "11": {
+    "class_type": "SamplerCustomAdvanced",
+    "inputs": {
+      "noise": [
+        "10",
+        0
+      ],
+      "guider": [
+        "9",
+        0
+      ],
+      "sampler": [
+        "8",
+        1
+      ],
+      "sigmas": [
+        "8",
+        2
+      ],
+      "latent_image": [
+        "7",
+        1
+      ]
+    }
+  },
+  "12": {
+    "class_type": "MiniMaxH3AVDecodeT8",
+    "inputs": {
+      "av_latent": [
+        "11",
+        0
+      ],
+      "video_vae": [
+        "1",
+        0
+      ],
+      "audio_vae": [
+        "2",
+        0
+      ]
+    }
+  },
+  "13": {
+    "class_type": "CreateVideo",
+    "inputs": {
+      "images": [
+        "12",
+        0
+      ],
+      "audio": [
+        "7",
+        2
+      ],
+      "fps": 24,
+      "bit_depth": "auto",
+      "color_space": "sRGB"
+    }
+  },
+  "14": {
+    "class_type": "SaveVideo",
+    "inputs": {
+      "video": [
+        "13",
+        0
+      ],
+      "filename_prefix": "guhuozai/shot_15",
+      "format": "auto",
+      "codec": "auto"
+    }
+  },
+  "100": {
+    "class_type": "LoadImage",
+    "inputs": {
+      "image": "guhuozai/wuya.png"
+    }
+  },
+  "200": {
+    "class_type": "LoadAudio",
+    "inputs": {
+      "audio": "guhuozai/drive_15.wav"
+    }
+  }
+}

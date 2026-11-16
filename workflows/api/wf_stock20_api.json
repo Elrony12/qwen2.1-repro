@@ -1,0 +1,231 @@
+{
+ "1": {
+  "class_type": "UNETLoader",
+  "inputs": {
+   "unet_name": "minimax_h3_ref2va_pruned_int8_convrot.safetensors",
+   "weight_dtype": "default"
+  }
+ },
+ "3": {
+  "class_type": "CLIPLoader",
+  "inputs": {
+   "clip_name": "minimax-h3/qwen3vl_32b_minimax_h3_nvfp4_awq.safetensors",
+   "type": "minimax",
+   "device": "default"
+  }
+ },
+ "4": {
+  "class_type": "VAELoader",
+  "inputs": {
+   "vae_name": "minimax-h3/minimax_h3_video_vae_fp16.safetensors"
+  }
+ },
+ "5": {
+  "class_type": "VAELoader",
+  "inputs": {
+   "vae_name": "minimax-h3/minimax_h3_audio_vae_fp32.safetensors"
+  }
+ },
+ "13": {
+  "class_type": "MiniMaxH3PromptRelayPlanT8Advanced",
+  "inputs": {
+   "global_prompt": "Photorealistic cinematic neo-noir crime drama, 16:9. Natural skin with visible pores, realistic materials, hard industrial lighting, organic depth of field. <Picture 1> is crime boss Wu Ya: exact facial bone structure, sleek dark hair, dark tailored suit. <Picture 2> is the henchman: short crew haircut, subservient, dark clothing. <Picture 3> is an underground boxing gym: octagonal iron cage ring, concrete mezzanine with metal railings, harsh overhead spotlights, smoky crowd. <Picture 4> is a lit cigarette: white rolled paper, burning orange ember, thin curling smoke. No beautification, no anime stylization, no on-screen text or subtitles, no background music.",
+   "local_prompts": "[Shot 1] High-angle wide establishing shot inside <Picture 3>. Camera tilts down across the cavernous room. Two sweat-sheened fighters grapple inside the octagonal iron cage, trading heavy body blows. A rowdy crowd of gamblers shouts and pumps fists through haze and rising cigarette smoke.\n[Shot 2] Medium-long low-angle shot, slow lateral pan along the second-floor metal railing. <Picture 1> leans sideways against the iron balustrade holding <Picture 4>, a wisp of smoke curling upward. Cold unblinking eyes stay locked on the fighting pit below. Two bodyguards stand in rigid silence in the soft-focus background.\n[Shot 3] Medium over-the-shoulder shot from behind the subject. <Picture 2> steps forward from the shadows and halts at a respectful distance, head slightly lowered, gaze deferential. He delivers a report with precise lip-sync, jaw shaping each syllable: <d>[Chinese] 鸦哥，何勇到了。</d>\n[Shot 4] Side-profile medium shot at eye level with a slow lateral tracking move. <Picture 1> keeps his head fixed toward the cage. He raises <Picture 4> to his lips, inhales as the ember glows orange, lowers his hand and exhales a dense plume of white smoke. Cold gaze fixed on the bloodstained canvas, he speaks with exact mouth articulation: <d>[Chinese] 让他打一场给我看。</d>",
+   "length": 362,
+   "timing_mode": "auto_equal",
+   "time_ranges": "0-88\n89-177\n178-267\n268-361",
+   "math_profile": "paper_v1",
+   "epsilon": 0.1,
+   "allow_gaps": false,
+   "allow_overlaps": false
+  }
+ },
+ "6": {
+  "class_type": "MiniMaxH3PromptRelayConditioningT8Advanced",
+  "inputs": {
+   "width": 1344,
+   "height": 768,
+   "task_type": "Ref2VA",
+   "audio_mode": "native",
+   "audio_denoise_strength": 0.35,
+   "add_source_as_reference": false,
+   "prompt_primary_audio_ordinal": 0,
+   "strict_prompt_tags": true,
+   "ref_image_size": "match",
+   "reference_video_policy": "official_2_to_15s",
+   "execution_mode": "apply_exp",
+   "query_chunk_rows": 256,
+   "model": [
+    "1",
+    0
+   ],
+   "clip": [
+    "3",
+    0
+   ],
+   "video_vae": [
+    "4",
+    0
+   ],
+   "audio_vae": [
+    "5",
+    0
+   ],
+   "prompt_relay_plan": [
+    "18",
+    0
+   ],
+   "ref_images.ref_image_0": [
+    "17",
+    0
+   ],
+   "ref_images.ref_image_1": [
+    "19",
+    0
+   ],
+   "ref_images.ref_image_2": [
+    "20",
+    0
+   ],
+   "ref_images.ref_image_3": [
+    "21",
+    0
+   ]
+  }
+ },
+ "7": {
+  "class_type": "MiniMaxH3DualClockSamplerT8",
+  "inputs": {
+   "steps": 20,
+   "shift_video": 12,
+   "shift_audio": 3,
+   "sampler_name": "dual_clock_euler",
+   "scheduler": "native_flow",
+   "model": [
+    "6",
+    0
+   ],
+   "av_latent": [
+    "6",
+    2
+   ]
+  }
+ },
+ "8": {
+  "class_type": "BasicGuider",
+  "inputs": {
+   "model": [
+    "7",
+    0
+   ],
+   "conditioning": [
+    "6",
+    1
+   ]
+  }
+ },
+ "9": {
+  "class_type": "RandomNoise",
+  "inputs": {
+   "noise_seed": 683072603085674
+  }
+ },
+ "10": {
+  "class_type": "SamplerCustomAdvanced",
+  "inputs": {
+   "noise": [
+    "9",
+    0
+   ],
+   "guider": [
+    "8",
+    0
+   ],
+   "sampler": [
+    "7",
+    1
+   ],
+   "sigmas": [
+    "7",
+    2
+   ],
+   "latent_image": [
+    "6",
+    2
+   ]
+  }
+ },
+ "11": {
+  "class_type": "MiniMaxH3AVDecodeT8",
+  "inputs": {
+   "av_latent": [
+    "10",
+    0
+   ],
+   "video_vae": [
+    "4",
+    0
+   ],
+   "audio_vae": [
+    "5",
+    0
+   ]
+  }
+ },
+ "12": {
+  "class_type": "VHS_VideoCombine",
+  "inputs": {
+   "frame_rate": 24,
+   "loop_count": 0,
+   "filename_prefix": "guhuozai_repro/stock20",
+   "format": "video/h264-mp4",
+   "pix_fmt": "yuv420p",
+   "crf": 19,
+   "save_metadata": true,
+   "trim_to_audio": false,
+   "pingpong": false,
+   "save_output": true,
+   "images": [
+    "11",
+    0
+   ],
+   "audio": [
+    "11",
+    1
+   ]
+  }
+ },
+ "17": {
+  "class_type": "LoadImage",
+  "inputs": {
+   "image": "guhuozai_repro/ref_image_0.png"
+  }
+ },
+ "18": {
+  "class_type": "MiniMaxH3PromptRelayPreviewT8Advanced",
+  "inputs": {
+   "prompt_relay_plan": [
+    "13",
+    0
+   ]
+  }
+ },
+ "19": {
+  "class_type": "LoadImage",
+  "inputs": {
+   "image": "guhuozai_repro/ref_image_1.png"
+  }
+ },
+ "20": {
+  "class_type": "LoadImage",
+  "inputs": {
+   "image": "guhuozai_repro/ref_image_2.png"
+  }
+ },
+ "21": {
+  "class_type": "LoadImage",
+  "inputs": {
+   "image": "guhuozai_repro/ref_image_3.png"
+  }
+ }
+}
